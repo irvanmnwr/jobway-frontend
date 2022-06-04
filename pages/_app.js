@@ -5,6 +5,7 @@ import Store from "../store";
 import { PersistGate } from "redux-persist/integration/react";
 
 import "../styles/auth.css";
+import "../styles/landing.css";
 
 function MyApp({ Component, pageProps }) {
   return (
