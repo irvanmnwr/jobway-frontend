@@ -1,0 +1,66 @@
+.container {
+  height: 100%;
+  padding-bottom: 50px;
+}
+
+.userProfile {
+  flex: 1;
+  height: 100%;
+  width: 360px;
+  padding-bottom: 20px;
+
+  background: white;
+}
+.detailsUser span {
+  margin: 5px 0px;
+}
+.buttonPass {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonPass button {
+  margin-top: 10px;
+  border: 1px solid purple;
+  height: 40px;
+}
+.buttonHire {
+  height: 50px;
+  width: 100%;
+  border: 0px;
+  color: white;
+  background-color: #5e50a1;
+  font-weight: bold;
+  border-radius: 4px;
+}
+.skills {
+  margin: 20px 0px;
+}
+.skills span {
+  background-color: rgba(251, 176, 23, 0.6);
+  margin: 5px 5px;
+  color: white;
+  padding: 0px 10px;
+  border: 1px solid #fbb017;
+  border-radius: 4px;
+}
+.formInput {
+  width: 570px;
+}
+@media (max-width: 500px) {
+  .userProfile {
+    margin: auto;
+    height: 100%;
+    padding-bottom: 50px;
+  }
+  .userPorto {
+    width: 100%;
+    height: 100%;
+  }
+  .portoMain {
+    width: 80%;
+  }
+  .buttonPass {
+    position: static;
+  }
+}
