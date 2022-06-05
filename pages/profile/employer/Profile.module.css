@@ -1,7 +1,13 @@
 .container {
   height: 100%;
   padding-bottom: 50px;
-  background-image: linear-gradient(purple, yellow);
+  background: linear-gradient(
+    to bottom,
+    #5e50a1 0%,
+    #5e50a1 30%,
+    #e5e5e5 30%,
+    #e5e5e5 100%
+  );
 }
 
 .userProfile {

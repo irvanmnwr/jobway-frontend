@@ -43,6 +43,7 @@ export default function Portofolio() {
   return (
     <div className={styles.container}>
       <div className=" container d-xl-flex pt-4 pt-xl-5">
+        <div className={styles.gradient}></div>
         <div className={`${styles.userProfile} container-xl `}>
           <div className=" d-flex justify-content-center mt-xl-4  mb-xl-2  pt-4 pt-xl-">
             <img style={{ width: "100px" }} src="../../user1.png" alt="" />
