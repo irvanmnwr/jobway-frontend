@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Profile.module.css";
+import Footer from "../../../component/Footer";
 import {
   IoMailOutline,
   IoLogoInstagram,
@@ -253,6 +254,9 @@ export default function Portofolio() {
 
           {/* <div>Pengalaman</div> */}
         </div>
+      </div>
+      <div className=" mt-5" style={{ height: "400px" }}>
+        <Footer />
       </div>
     </div>
   );

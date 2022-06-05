@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Hire.module.css";
+import Footer from "../../component/Footer";
 import {
   IoMailOutline,
   IoLogoInstagram,
@@ -163,6 +164,9 @@ export default function Portofolio() {
             </div>
           </div>
         </div>
+      </div>
+      <div className=" mt-5">
+        <Footer />
       </div>
     </div>
   );

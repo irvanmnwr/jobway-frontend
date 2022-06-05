@@ -1,6 +1,5 @@
 .container {
   height: 100%;
-  padding-bottom: 50px;
 }
 
 .userProfile {
@@ -47,6 +46,9 @@
 .formInput {
   width: 570px;
 }
+.footerContainer {
+  height: 100%;
+}
 @media (max-width: 500px) {
   .userProfile {
     margin: auto;
@@ -62,5 +64,9 @@
   }
   .buttonPass {
     position: static;
+  }
+
+  .formInput {
+    width: 100%;
   }
 }
