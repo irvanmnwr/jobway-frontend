@@ -14,7 +14,7 @@ export default function Landing() {
         </Head>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container">
-                <Image src="/../../images/landing/auth-logo-purple.svg" alt="" width={127} height={35}/>
+                <Image src="/../../images/landing/auth-logo-purple.svg" alt="auth-logo-purple" width={127} height={35}/>
                 <button
                 className="navbar-toggler"
                 type="button"
@@ -50,31 +50,31 @@ export default function Landing() {
                     <button className="landing-purple-btn btn btn-primary">Mulai Dari Sekarang</button>
                 </div>
                 <div className="content-right ps-5">
-                    <img src="../../images/landing/header.png" alt="" />
+                    <img src="../../images/landing/header.png" alt="header" />
                 </div>
             </div>
         </div>
         <div className="sub-1">
             <div className="content-main container">
                 <div className="content-right pe-5">
-                    <img src="../../images/landing/sub-1.png" alt="" />
+                    <img src="../../images/landing/sub-1.png" alt="sub-1" />
                 </div>
                 <div className="content-left ps-5">
                     <h2>Kenapa harus mencari tallent di Jobway</h2>
                     <div className="sub-list-1 mt-5">
-                        <img src="../../images/landing/check-icon.png" alt="" />
+                        <img src="../../images/landing/check-icon.png" alt="check-icon" />
                         <p>Lorem ipsum dolor sit amet.</p>
                     </div>
                     <div className="sub-list-1 mt-4">
-                        <img src="../../images/landing/check-icon.png" alt="" />
+                        <img src="../../images/landing/check-icon.png" alt="check-icon" />
                         <p>Lorem ipsum dolor sit amet.</p>
                     </div>
                     <div className="sub-list-1 mt-4">
-                        <img src="../../images/landing/check-icon.png" alt="" />
+                        <img src="../../images/landing/check-icon.png" alt="check-icon" />
                         <p>Lorem ipsum dolor sit amet.</p>
                     </div>
                     <div className="sub-list-1 mt-4">
-                        <img src="../../images/landing/check-icon.png" alt="" />
+                        <img src="../../images/landing/check-icon.png" alt="check-icon" />
                         <p>Lorem ipsum dolor sit amet.</p>
                     </div>
                 </div>
@@ -89,44 +89,44 @@ export default function Landing() {
                     <div className="d-flex">
                         <div className="me-5">
                             <div className="sub-list-1">
-                                <img src="../../images/landing/orange-check-icon.png" alt="" />
+                                <img src="../../images/landing/orange-check-icon.png" alt="orange-check-icon" />
                                 <p>Java</p>
                             </div>
                             <div className="sub-list-1 mt-4">
-                                <img src="../../images/landing/orange-check-icon.png" alt="" />
+                                <img src="../../images/landing/orange-check-icon.png" alt="orange-check-icon" />
                                 <p>Kotlin</p>
                             </div>
                             <div className="sub-list-1 mt-4">
-                                <img src="../../images/landing/orange-check-icon.png" alt="" />
+                                <img src="../../images/landing/orange-check-icon.png" alt="orange-check-icon" />
                                 <p>PHP</p>
                             </div>
                             <div className="sub-list-1 mt-4">
-                                <img src="../../images/landing/orange-check-icon.png" alt="" />
+                                <img src="../../images/landing/orange-check-icon.png" alt="orange-check-icon" />
                                 <p>JavaScript</p>
                             </div>
                         </div>
                         <div>
                             <div className="sub-list-1">
-                                <img src="../../images/landing/orange-check-icon.png" alt="" />
+                                <img src="../../images/landing/orange-check-icon.png" alt="orange-check-icon" />
                                 <p>Golang</p>
                             </div>
                             <div className="sub-list-1 mt-4">
-                                <img src="../../images/landing/orange-check-icon.png" alt="" />
+                                <img src="../../images/landing/orange-check-icon.png" alt="orange-check-icon" />
                                 <p>C++</p>
                             </div>
                             <div className="sub-list-1 mt-4">
-                                <img src="../../images/landing/orange-check-icon.png" alt="" />
+                                <img src="../../images/landing/orange-check-icon.png" alt="orange-check-icon" />
                                 <p>Ruby</p>
                             </div>
                             <div className="sub-list-1 mt-4">
-                                <img src="../../images/landing/orange-check-icon.png" alt="" />
+                                <img src="../../images/landing/orange-check-icon.png" alt="orange-check-icon" />
                                 <p>10+ Bahasa lainnya</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="content-right pe-5">
-                    <img src="../../images/landing/sub-2.png" alt="" />
+                    <img src="../../images/landing/sub-2.png" alt="sub-2" />
                 </div>
             </div>
         </div>
@@ -134,27 +134,27 @@ export default function Landing() {
         <div className="testi">
             <h2>Their opinion about Jobway</h2>
             <button className="left-arrow">
-                <img src="../../images/landing/left-arrow.png" alt="" />
+                <img src="../../images/landing/left-arrow.png" alt="left-arrow" />
             </button>
             <button className="right-arrow">
-                <img src="../../images/landing/right-arrow.png" alt="" />
+                <img src="../../images/landing/right-arrow.png" alt="right-arrow" />
             </button>
             <div className="testi-card container row">
                 
                 <div className="testi-card-content col">
-                    <img src="../../images/landing/testi-1.png" alt="" />
+                    <img src="../../images/landing/testi-1.png" alt="testi-1" />
                     <h3>Harry Styles</h3>
                     <h4>Web Developer</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dui rhoncus auctor.</p>
                 </div>
                 <div className="testi-card-content col ms-4 me-4 mobile-disable">
-                    <img src="../../images/landing/testi-2.png" alt="" />
+                    <img src="../../images/landing/testi-2.png" alt="testi-2" />
                     <h3>Niall Horan</h3>
                     <h4>Web Developer</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dui rhoncus auctor.</p>
                 </div>
                 <div className="testi-card-content col mobile-disable">
-                    <img src="../../images/landing/testi-3.png" alt="" />
+                    <img src="../../images/landing/testi-3.png" alt="testi-3" />
                     <h3>Louis Tomlinson</h3>
                     <h4>Web Developer</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dui rhoncus auctor.</p>

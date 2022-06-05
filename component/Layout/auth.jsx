@@ -10,12 +10,12 @@ export default function AuthLayout(props) {
       </Head>
       <div className="auth d-flex">
         <div className="auth-left">
-          <Image src="/../../images/auth/auth-logo-white.svg" alt="Vercel Logo" width={100} height={30} />
+          <Image src="/../../images/auth/auth-logo-white.svg" alt="auth-logo-white" width={100} height={30} />
           <h1>Temukan developer berbakat & terbaik di berbagai bidang keahlian</h1>
           <hr />
         </div>
         <div className="logo-mobile">
-          <Image src="/../../images/auth/auth-logo-purple.svg" alt="Vercel Logo" width={100} height={30} />
+          <Image src="/../../images/auth/auth-logo-purple.svg" alt="auth-logo-purple" width={100} height={30} />
         </div>
         <div className="auth-right">
           <main>{props.children}</main>
