@@ -1,0 +1,393 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap");
+.profile__main {
+  background: #e5e5e5;
+  height: 3300px;
+}
+.backgroundPart {
+  background-color: #5e50a1;
+  height: 500px;
+  padding-top: 15px;
+}
+/* Employer Styling */
+.employer__main {
+  margin-top: 90px;
+}
+.employer__cardProfile {
+  height: 600px;
+  background: #ffffff;
+  border-radius: 8px;
+  align-items: center;
+  text-align: center;
+}
+.employer__photo {
+  align-items: center;
+  text-align: center;
+  padding-top: 20px;
+}
+.employer__photoBorder {
+  border-radius: 50%;
+}
+.employer__editButton {
+  border: none;
+  background: none;
+  margin-top: 10px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 56px;
+  color: #9ea0a5;
+}
+.employer__profileInfo {
+  text-align: left;
+  align-items: left;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.employer__name {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  color: #1f2a36;
+}
+.employer__job {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #1f2a36;
+}
+.employer__typeJob {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #9ea0a5;
+}
+.employer__locationPhone {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #9ea0a5;
+}
+.employer__buttonCardProfile {
+  width: 100%;
+  height: 50px;
+  margin-top: 20px;
+  background: #5e50a1;
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+}
+
+.employer__cardEdit {
+  height: 750px;
+  background: #ffffff;
+  border-radius: 8px;
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
+.employer__tittleCard {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  color: #1f2a36;
+  margin-left: 20px;
+}
+.employer__setForm {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.employer__labelForm {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  color: #9ea0a5;
+}
+.employer__inputForm {
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+  height: 50px;
+  background: #ffffff;
+  border: 1px solid #e2e5ed;
+  border-radius: 4px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #858d96;
+}
+.employer__Description {
+  height: 120px;
+}
+.employer__buttonInfoProfile {
+  background: #fbb017;
+  border-radius: 4px;
+  border: none;
+  height: 50px;
+  width: 80px;
+  margin-left: 88%;
+  color: #ffffff;
+}
+.employer__skillEdit {
+  height: 500px;
+  background: #ffffff;
+  border-radius: 8px;
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
+.employer__buttonSkillProfile {
+  background: #fbb017;
+  border-radius: 4px;
+  border: none;
+  height: 50px;
+  width: 80px;
+  margin-left: 15px;
+  color: #ffffff;
+}
+.employer__skillList {
+  margin-left: 20px;
+  align-items: center;
+  text-align: center;
+  width: 20%;
+  background: rgba(251, 176, 23, 0.6);
+  border: 1px solid #fbb017;
+  border-radius: 4px;
+  color: #ffffff;
+}
+.employer__deleteList {
+  border: none;
+  background: none;
+  color: #ffffff;
+}
+.employer__workEdit {
+  height: 600px;
+  background: #ffffff;
+  border-radius: 8px;
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
+
+.employer__buttonJob {
+  border: 1px solid #fbb017;
+  border-radius: 4px;
+  color: #fbb017;
+  background: none;
+  width: 96%;
+  height: 50px;
+  margin-left: 2%;
+}
+.employer__buttonJob:hover {
+  color: #ffffff;
+  background-color: #fbb017;
+}
+.employer__portfolioEdit {
+  height: 850px;
+  background: #ffffff;
+  border-radius: 8px;
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
+.employer__uploadImagePorto {
+  width: 820px;
+  height: 400px;
+}
+/* Recruiter Styling */
+.recruiter__main {
+  margin-top: 90px;
+}
+.recruiter__cardProfile {
+  height: 500px;
+  background: #ffffff;
+  border-radius: 8px;
+  align-items: center;
+  text-align: center;
+  padding-right: 20px;
+}
+.recruiter__photo {
+  align-items: center;
+  text-align: center;
+  padding-top: 20px;
+}
+.recruiter__photoBorder {
+  border-radius: 50%;
+}
+.recruiter__editButton {
+  border: none;
+  background: none;
+  margin-top: 10px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 56px;
+  color: #9ea0a5;
+}
+.recruiter__profileInfo {
+  text-align: left;
+  align-items: left;
+  padding-left: 20px;
+}
+.recruiter__name {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  color: #1f2a36;
+}
+.recruiter__job {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #1f2a36;
+}
+.recruiter__locationPhone {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #9ea0a5;
+}
+.recruiter__buttonCardProfile {
+  width: 100%;
+  height: 50px;
+  margin-top: 20px;
+  background: #5e50a1;
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+}
+
+.recruiter__cardEdit {
+  height: 1000px;
+  background: #ffffff;
+  border-radius: 8px;
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
+.recruiter__tittleCard {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  color: #1f2a36;
+  margin-left: 20px;
+}
+.recruiter__setForm {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.recruiter__labelForm {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  color: #9ea0a5;
+}
+.recruiter__inputForm {
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+  height: 50px;
+  background: #ffffff;
+  border: 1px solid #e2e5ed;
+  border-radius: 4px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #858d96;
+}
+.recruiter__Description {
+  height: 120px;
+}
+
+/* Recruiter Page Styling */
+.recruiterPage__main {
+  background: #e5e5e5;
+  height: 1800px;
+  padding-top: 100px;
+}
+.backgroundPartContainer {
+  height: 200px;
+  background: #5e50a1;
+  border-radius: 8px 8px 0px 0px;
+}
+.recruiterPage__photo {
+  position: relative;
+  top: 140px;
+  text-align: center;
+}
+.recruiterPage__content {
+  height: 600px;
+  background-color: #ffffff;
+  padding-top: 120px;
+  text-align: center;
+  align-items: center;
+}
+.recruiterPage__name {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 24px;
+  color: #1f2a36;
+}
+.recruiterPage__field {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #1f2a36;
+}
+.recruiterPage__location {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #9ea0a5;
+}
+.recruiterPage__description {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #9ea0a5;
+}
+.recruiterPage__buttonEdit {
+  background: #5e50a1;
+  border-radius: 4px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+  border: none;
+  width: 300px;
+  height: 50px;
+  margin-bottom: 50px;
+}
+.recruiterPage__text {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #9ea0a5;
+}
