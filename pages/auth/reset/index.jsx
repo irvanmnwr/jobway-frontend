@@ -3,27 +3,19 @@ import Layout from "../../../component/Layout/auth";
 import axios from "../../../utils/axios";
 export default function ResetPassword() {
   const [data, setData] = useState({ email: "" });
-  const [alert, setAlert] = useState({
-    show: true,
-    text: "",
-  });
+  //   const [alert, setAlert] = useState({
+  //     show: true,
+  //     text: "",
+  //   });
   const handleSubmit = async () => {
     try {
       const result = await axios.post(`/auth/confirmPassword`, data);
-      setAlert({
-        ...alert,
-        show: true,
-        text: "Success!! Please Check your Email",
-      });
+
       alert("Success!! Please Check your Email");
       console.log(result);
     } catch (error) {
       console.log(error.response);
-      setAlert({
-        ...alert,
-        show: true,
-        text: error.response.data.msg,
-      });
+
       alert(error.response.data.msg);
     }
   };
