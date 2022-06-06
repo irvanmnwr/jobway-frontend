@@ -8,18 +8,16 @@ import { useRouter } from "next/router";
 import { BsPencil } from "react-icons/bs";
 import { BiMap, BiPhone } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
-// import axios from "../../../utils/axios";
+import Footer from "../../../component/Footer";
 import { updateUser, getUserById } from "../../../store/actions/profile";
 
 export default function Recruiter() {
   const dispatch = useDispatch();
   const router = useRouter();
-  const dataUser = useSelector((state) => state.profile.data[0]);
-  console.log(dataUser);
   const [form, setForm] = useState({});
   const [showAlert, setShowAlert] = useState(false);
   const [showImage, setShowImage] = useState(false);
-
+  const dataUser = useSelector((state) => state.profile.data[0]); //integrasi login
   const getDataByUserId = async () => {
     try {
       await dispatch(getUserById(dataUser.id));
@@ -52,7 +50,7 @@ export default function Recruiter() {
     <>
       <Editprofilealert setShowAlert={setShowAlert} showAlert={showAlert} />
       <Editprofilephoto setShowImage={setShowImage} showImage={showImage} setShowAlert={setShowAlert} id={dataUser.id} />
-      <div className="profile__main">
+      <div className="profile__master">
         <div className="backgroundPart">
           <div className="container">
             <div className="row recruiter__main">
@@ -125,6 +123,7 @@ export default function Recruiter() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

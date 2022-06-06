@@ -5,8 +5,7 @@ const nextConfig = {
     domains: ["res.cloudinary.com"],
   },
   env: {
-    CLAUDINARY:
-      "https://res.cloudinary.com/dgfrrs5iz/image/upload/v1654519968/",
+    CLAUDINARY: "https://res.cloudinary.com/dgfrrs5iz/image/upload/v1654519968/",
     URL_BACKEND: "https://project-jobway.herokuapp.com/",
     URL_BACKEND2: "http://localhost:3004",
   },

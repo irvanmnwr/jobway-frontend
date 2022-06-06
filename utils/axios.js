@@ -2,7 +2,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 
 const axiosApiIntances = axios.create({
-  baseURL: process.env.URL_BACKEND,
+  baseURL: process.env.URL_BACKEND2,
 });
 
 // Add a request interceptor
