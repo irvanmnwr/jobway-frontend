@@ -42,8 +42,8 @@ export default function PekerjaLogin() {
       setAlert({
         ...alert,
         show: true,
-        text: error.response.data.msg,
-        staus: error.response.data.status,
+        // text: error.response.data.msg,
+        // staus: error.response.data.status,
       });
     }
   };

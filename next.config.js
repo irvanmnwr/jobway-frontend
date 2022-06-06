@@ -46,6 +46,15 @@ const nextConfig = {
         source: "/home",
         destination: "/landing",
       },
+
+      {
+        source: "/option-register",
+        destination: "/auth/option/register",
+      },
+      {
+        source: "/option-login",
+        destination: "/auth/option/login",
+      },
     ];
   },
 };

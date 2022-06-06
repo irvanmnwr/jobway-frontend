@@ -22,7 +22,7 @@ export default function PekerjaRegister() {
     try {
       const result = await axios.post(`/auth/register`, data);
       console.log(result);
-      alert(result.data.msg);
+      alert("succes register please check your email");
     } catch (error) {
       console.log(error.response);
     }
