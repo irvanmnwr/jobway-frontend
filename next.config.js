@@ -5,7 +5,7 @@ const nextConfig = {
     domains: ["res.cloudinary.com"],
   },
   env: {
-    CLAUDINARY: "",
+    CLAUDINARY: "https://res.cloudinary.com/dgfrrs5iz/image/upload/v1654506492/",
     URL_BACKEND: "http://localhost:3004",
   },
   async rewrites() {

@@ -9,16 +9,24 @@ import { BsPencil } from "react-icons/bs";
 import { BiMap, BiPhone } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
 // import axios from "../../../utils/axios";
-import { updateUser } from "../../../store/actions/profile";
+import { updateUser, getUserById } from "../../../store/actions/profile";
 
 export default function Recruiter() {
   const dispatch = useDispatch();
   const router = useRouter();
-  const dataUser = useSelector((state) => state.auth.data[0]);
+  const dataUser = useSelector((state) => state.profile.data[0]);
   console.log(dataUser);
   const [form, setForm] = useState({});
   const [showAlert, setShowAlert] = useState(false);
   const [showImage, setShowImage] = useState(false);
+
+  const getDataByUserId = async () => {
+    try {
+      await dispatch(getUserById(dataUser.id));
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const handleBack = () => {
     router.push("/profile/recruiterPage");
   };
@@ -34,6 +42,7 @@ export default function Recruiter() {
         formData.append(data, form[data]);
       }
       await dispatch(updateUser(dataUser.id, formData));
+      getDataByUserId();
       setShowAlert(true);
     } catch (error) {
       console.log(error);
@@ -42,7 +51,7 @@ export default function Recruiter() {
   return (
     <>
       <Editprofilealert setShowAlert={setShowAlert} showAlert={showAlert} />
-      <Editprofilephoto setShowImage={setShowImage} showImage={showImage} setShowAlert={setShowAlert} />
+      <Editprofilephoto setShowImage={setShowImage} showImage={showImage} setShowAlert={setShowAlert} id={dataUser.id} />
       <div className="profile__main">
         <div className="backgroundPart">
           <div className="container">
@@ -50,14 +59,14 @@ export default function Recruiter() {
               <div className="col-3">
                 <div className="recruiter__cardProfile">
                   <div className="recruiter__photo">
-                    <Image src={photo} alt="photoProfile" width={120} height={120} className="recruiter__photoBorder" />
+                    <Image src={dataUser.image ? process.env.CLAUDINARY + dataUser.image : photo} alt="photoProfile" width={120} height={120} className="recruiter__photoBorder" />
                   </div>
                   <button className="recruiter__editButton" onClick={() => setShowImage(true)}>
                     <BsPencil /> Edit
                   </button>
                   <div className="recruiter__profileInfo">
-                    <p className="recruiter__name">{dataUser.name}</p>
-                    <p className="recruiter__job">{dataUser.typeEmployee ? dataUser.typeEmployee : "Data bidang belum diisi"}</p>
+                    <p className="recruiter__name">{dataUser.company ? dataUser.company : "Data perusahaan belum diisi"}</p>
+                    <p className="recruiter__job">{dataUser.companyType ? dataUser.companyType : "Data bidang belum diisi"}</p>
                     <p className="recruiter__locationPhone">
                       <BiMap /> {dataUser.domicilie ? dataUser.domicilie : "Data domisili belum diisi"}
                     </p>
