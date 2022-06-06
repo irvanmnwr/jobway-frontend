@@ -5,8 +5,9 @@ const nextConfig = {
     domains: ["res.cloudinary.com"],
   },
   env: {
-    CLAUDINARY: "",
-    URL_BACKEND: "",
+    CLAUDINARY:
+      "https://res.cloudinary.com/dgfrrs5iz/image/upload/v1654519968/",
+    URL_BACKEND: "https://project-jobway.herokuapp.com/",
   },
   async rewrites() {
     return [

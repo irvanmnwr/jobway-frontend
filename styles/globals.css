@@ -17,6 +17,9 @@ a {
 .home__navbar {
   background-color: #5e50a1;
 }
+.home {
+  padding: 30px 0px;
+}
 
 .home .btn-primary {
   background-color: #5e50a1 !important;
@@ -35,7 +38,7 @@ a {
   color: #9ea0a5;
 }
 
-.img_profile {
+.home .img_profile {
   border-radius: 50%;
   margin-left: 40px;
   background-color: blue;
@@ -84,4 +87,40 @@ a {
 .pagination > li:last-child > a,
 .pagination > li:last-child > span {
   border-radius: unset;
+}
+
+@media (max-width: 720px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .home__pagination {
+    display: none;
+  }
+
+  .home .home__search {
+    display: none;
+  }
+
+  .home .profile__button {
+    display: none;
+  }
+
+  .home .col-md-2 {
+    width: 50%;
+    margin: 0px -30px;
+  }
+
+  .home .text__desktop {
+    display: none;
+  }
+
+  .home h5 {
+    font-size: 16px;
+  }
+  .home .col-md-8 {
+    width: 60%;
+  }
 }
