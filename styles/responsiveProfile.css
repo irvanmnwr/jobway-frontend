@@ -1,0 +1,41 @@
+@media screen and (max-width: 800px) {
+  .recruiter__main {
+    margin-top: 100px;
+  }
+  .recruiter__cardProfile {
+    position: relative;
+    width: 350px;
+    height: 600px;
+    background: #ffffff;
+    border-radius: 8px;
+    align-items: center;
+    text-align: center;
+    padding-right: 20px;
+  }
+  .recruiter__buttonCardProfile {
+    position: relative;
+    top: 1100px;
+    width: 350px;
+    height: 50px;
+    margin-top: 20px;
+    background: #5e50a1;
+    border-radius: 4px;
+    border: none;
+    color: #ffffff;
+  }
+  .recruiter__buttonCardProfile:hover {
+    color: #ffffff;
+    background: #fbb017;
+  }
+  .recruiter__cardEdit {
+    position: relative;
+    width: 350px;
+    left: -100px;
+    top: 650px;
+    height: 1000px;
+    background: #ffffff;
+    border-radius: 8px;
+    padding-top: 30px;
+    margin-bottom: 30px;
+  }
+}

@@ -1,14 +1,20 @@
 import React, { useState } from "react";
 import { BsFillBookmarkXFill } from "react-icons/bs";
 import { useDispatch } from "react-redux";
-import Cookies from "js-cookie";
+import { updateUser, getUserById } from "../../store/actions/profile";
 import Image from "next/image";
 
-export default function Editprofilephoto({ showImage, setShowImage, setShowAlert }) {
-  //   const dispatch = useDispatch();
-  //   const idUser = Cookies.get("id");
+export default function Editprofilephoto({ showImage, setShowImage, setShowAlert, id }) {
+  const dispatch = useDispatch();
   const [form, setForm] = useState({});
   const [uiImage, setUiImage] = useState(null);
+  const getDataByUserId = async () => {
+    try {
+      await dispatch(getUserById(id));
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const handleFormImage = (e) => {
     e.preventDefault();
     const { name, files } = event.target;
@@ -22,6 +28,8 @@ export default function Editprofilephoto({ showImage, setShowImage, setShowAlert
       for (const data in form) {
         formData.append(data, form[data]);
       }
+      await dispatch(updateUser(id, formData));
+      getDataByUserId();
       setShowImage(false);
       setShowAlert(true);
     } catch (error) {
