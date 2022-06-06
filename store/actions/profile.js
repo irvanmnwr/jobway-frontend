@@ -12,3 +12,15 @@ export const updateUser = (id, form) => {
     payload: axios.patch(`user/${id}`, form),
   };
 };
+export const updatePasswordUser = (id, form) => {
+  return {
+    type: "UPDATE_PASSWORD_USER",
+    payload: axios.patch(`user/password/${id}`, form),
+  };
+};
+export const createExperience = (data) => {
+  return {
+    type: "POST_EXPERIENCE",
+    payload: axios.post(`workexperience`, data),
+  };
+};

@@ -6,7 +6,7 @@ const nextConfig = {
   },
   env: {
     CLAUDINARY: "https://res.cloudinary.com/dgfrrs5iz/image/upload/v1654506492/",
-    URL_BACKEND: "http://localhost:3004",
+    URL_BACKEND: "https://project-jobway.herokuapp.com",
   },
   async rewrites() {
     return [

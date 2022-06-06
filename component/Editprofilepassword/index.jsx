@@ -1,20 +1,27 @@
 import React, { useState } from "react";
 import { BsFillBookmarkXFill } from "react-icons/bs";
-import { useDispatch } from "react-redux";
-import Cookies from "js-cookie";
+import { useDispatch, useSelector } from "react-redux";
+import { updatePasswordUser, getUserById } from "../../store/actions/profile";
 
-export default function Editprofilepassword({ showChangePassword, setShowChangePassword, setShowAlert }) {
-  //   const dispatch = useDispatch();
-  //   const idUser = Cookies.get("id");
+export default function Editprofilepassword({ showChangePassword, setShowChangePassword, setShowAlert, id }) {
+  const dispatch = useDispatch();
   const [form, setForm] = useState({});
   const handleFormEdit = (e) => {
     e.preventDefault();
     setForm({ ...form, [e.target.name]: e.target.value });
   };
+  const getDataByUserId = async () => {
+    try {
+      await dispatch(getUserById(id));
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const handleEdit = async (e) => {
     try {
       e.preventDefault();
-      console.log(form);
+      await dispatch(updatePasswordUser(id, form));
+      getDataByUserId();
       setShowChangePassword(false);
       setShowAlert(true);
     } catch (error) {
@@ -41,7 +48,7 @@ export default function Editprofilepassword({ showChangePassword, setShowChangeP
               <p className="edit__des">Masukan Perubahan</p>
               <form>
                 <h1 className="edit__label">Password Lama</h1>
-                <input type="text" className="edit__input" name="oldPassword" placeholder="Masukan Password Lama" onChange={handleFormEdit} />
+                <input type="text" className="edit__input" name="currentPassword" placeholder="Masukan Password Lama" onChange={handleFormEdit} />
                 <h1 className="edit__label">Password Baru</h1>
                 <input type="text" className="edit__input" name="newPassword" placeholder="Masukan Password Baru" onChange={handleFormEdit} />
                 <h1 className="edit__label">Konfirmasi Password Baru</h1>

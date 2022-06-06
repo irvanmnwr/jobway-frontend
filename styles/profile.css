@@ -3,6 +3,10 @@
   background: #e5e5e5;
   height: 3300px;
 }
+.profile__master {
+  background: #e5e5e5;
+  height: 1300px;
+}
 .backgroundPart {
   background-color: #5e50a1;
   height: 500px;
@@ -87,7 +91,7 @@
   background: #fbb017;
 }
 .employer__cardEdit {
-  height: 800px;
+  height: 950px;
   background: #ffffff;
   border-radius: 8px;
   padding-top: 30px;
