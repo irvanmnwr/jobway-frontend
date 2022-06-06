@@ -5,8 +5,9 @@ const nextConfig = {
     domains: ["res.cloudinary.com"],
   },
   env: {
-    CLAUDINARY: "https://res.cloudinary.com/dgfrrs5iz/image/upload/v1654506492/",
-    URL_BACKEND: "https://project-jobway.herokuapp.com",
+    CLAUDINARY: "https://res.cloudinary.com/dgfrrs5iz/image/upload/v1654519968/",
+    URL_BACKEND: "https://project-jobway.herokuapp.com/",
+    URL_BACKEND2: "http://localhost:3004",
   },
   async rewrites() {
     return [
@@ -35,16 +36,20 @@ const nextConfig = {
         destination: "/auth/reset",
       },
       {
-        source: "/konfirmasi-reset",
-        destination: "/auth/reset/konfirmasi",
+        source: "/auth/resetPassword/:id",
+        destination: "/auth/reset/konfirmasi/:id",
       },
       {
         source: "/konfirmasi-login",
         destination: "/auth/reset/login",
       },
       {
-        source: "/home",
+        source: "/homepage",
         destination: "/landing",
+      },
+      {
+        source: "/View-Employee",
+        destination: "/home",
       },
 
       {
