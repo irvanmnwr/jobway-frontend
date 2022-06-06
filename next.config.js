@@ -42,6 +42,15 @@ const nextConfig = {
         source: "/konfirmasi-login",
         destination: "/auth/reset/login",
       },
+      
+      {
+        source: "/option-register",
+        destination: "/auth/option/register",
+      },
+      {
+        source: "/option-login",
+        destination: "/auth/option/login",
+      },
     ];
   },
 };

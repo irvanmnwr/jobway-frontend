@@ -29,12 +29,12 @@ export default function Landing() {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 </ul>
-                <Link href="../auth/pekerja/login">
+                <Link href="../auth/option/login">
                     <button className="landing-nav-btn-white btn btn-primary me-3">
                         Masuk
                     </button>
                 </Link>
-                <Link href="../auth/pekerja/register">
+                <Link href="../auth/option/register">
                     <button className="landing-nav-btn-purple btn btn-primary" href="../signIn">
                         Daftar
                     </button>
