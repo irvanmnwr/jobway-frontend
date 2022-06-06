@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from "react";
 // import Footer from "../../../components/Footer";
-// import Menu from "../../../components/Menu";
 import Image from "next/image";
 import photo from "../../../public/photoProfile.jpg";
 import Editprofilealert from "../../../component/Editprofilealert";
+import Editprofilephoto from "../../../component/Editprofilephoto";
 import { useRouter } from "next/router";
-// import Cookies from "js-cookie";
 import { BsPencil } from "react-icons/bs";
 import { BiMap, BiPhone } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
 // import axios from "../../../utils/axios";
-// import Edit from "../../../components/Edit";
-// import { getUserById } from "../../../stores/actions/user";
-// import Upload from "../../../components/upload";
+import { updateUser } from "../../../store/actions/profile";
 
 export default function Recruiter() {
   const dispatch = useDispatch();
   const router = useRouter();
+  const dataUser = useSelector((state) => state.auth.data[0]);
+  console.log(dataUser);
   const [form, setForm] = useState({});
   const [showAlert, setShowAlert] = useState(false);
+  const [showImage, setShowImage] = useState(false);
   const handleBack = () => {
     router.push("/profile/recruiterPage");
   };
@@ -29,7 +29,11 @@ export default function Recruiter() {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      console.log(form);
+      const formData = new FormData();
+      for (const data in form) {
+        formData.append(data, form[data]);
+      }
+      await dispatch(updateUser(dataUser.id, formData));
       setShowAlert(true);
     } catch (error) {
       console.log(error);
@@ -38,6 +42,7 @@ export default function Recruiter() {
   return (
     <>
       <Editprofilealert setShowAlert={setShowAlert} showAlert={showAlert} />
+      <Editprofilephoto setShowImage={setShowImage} showImage={showImage} setShowAlert={setShowAlert} />
       <div className="profile__main">
         <div className="backgroundPart">
           <div className="container">
@@ -47,16 +52,16 @@ export default function Recruiter() {
                   <div className="recruiter__photo">
                     <Image src={photo} alt="photoProfile" width={120} height={120} className="recruiter__photoBorder" />
                   </div>
-                  <button className="recruiter__editButton">
+                  <button className="recruiter__editButton" onClick={() => setShowImage(true)}>
                     <BsPencil /> Edit
                   </button>
                   <div className="recruiter__profileInfo">
-                    <p className="recruiter__name">Louis Tomlinson</p>
-                    <p className="recruiter__job">Web Developer</p>
+                    <p className="recruiter__name">{dataUser.name}</p>
+                    <p className="recruiter__job">{dataUser.typeEmployee ? dataUser.typeEmployee : "Data bidang belum diisi"}</p>
                     <p className="recruiter__locationPhone">
-                      <BiMap /> Purwokerto, Jawa Tengah
+                      <BiMap /> {dataUser.domicilie ? dataUser.domicilie : "Data domisili belum diisi"}
                     </p>
-                    <p className="recruiter__locationPhone">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat orci, mollis nec gravida sed, ornare quis urna. Curabitur eu lacus fringilla, vestibulum risus at.</p>
+                    <p className="recruiter__locationPhone">{dataUser.description ? dataUser.description : "Deskripsi belum diisi"}</p>
                   </div>
                 </div>
                 <button className="recruiter__buttonCardProfile" onClick={handleSubmit}>
@@ -74,15 +79,15 @@ export default function Recruiter() {
                   <form>
                     <div className="recruiter__setForm">
                       <h1 className="recruiter__labelForm">Nama Perusahaan</h1>
-                      <input type="text" placeholder="Masukan Nama Perusahaan" className="recruiter__inputForm" name="name" onChange={handleChangeForm} />
+                      <input type="text" placeholder="Masukan Nama Perusahaan" className="recruiter__inputForm" name="company" onChange={handleChangeForm} />
                     </div>
                     <div className="recruiter__setForm">
                       <h1 className="recruiter__labelForm">Bidang</h1>
-                      <input type="text" placeholder="Masukan Bidang Perusahaan ex: finance" className="recruiter__inputForm" name="field" onChange={handleChangeForm} />
+                      <input type="text" placeholder="Masukan Bidang Perusahaan ex: finance" className="recruiter__inputForm" name="companyType" onChange={handleChangeForm} />
                     </div>
                     <div className="recruiter__setForm">
                       <h1 className="recruiter__labelForm">Domisili</h1>
-                      <input type="text" placeholder="Masukan Domisili" className="recruiter__inputForm" name="domain" onChange={handleChangeForm} />
+                      <input type="text" placeholder="Masukan Domisili" className="recruiter__inputForm" name="domicilie" onChange={handleChangeForm} />
                     </div>
                     <div className="recruiter__setForm">
                       <h1 className="recruiter__labelForm">Deskripsi Singkat</h1>
@@ -102,7 +107,7 @@ export default function Recruiter() {
                     </div>
                     <div className="recruiter__setForm">
                       <h1 className="recruiter__labelForm">Linkedin</h1>
-                      <input type="text" placeholder="Masukan Nama Linkedin" className="recruiter__inputForm" name="linkedin" onChange={handleChangeForm} />
+                      <input type="text" placeholder="Masukan Nama Linkedin" className="recruiter__inputForm" name="linkedIn" onChange={handleChangeForm} />
                     </div>
                   </form>
                 </div>
