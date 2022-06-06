@@ -6,7 +6,7 @@ const nextConfig = {
   },
   env: {
     CLAUDINARY: "",
-    URL_BACKEND: "https://project-jobway.herokuapp.com",
+    URL_BACKEND: "http://localhost:3004",
   },
   async rewrites() {
     return [
