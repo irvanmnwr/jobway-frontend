@@ -35,8 +35,8 @@ const nextConfig = {
         destination: "/auth/reset",
       },
       {
-        source: "/konfirmasi-reset",
-        destination: "/auth/reset/konfirmasi",
+        source: "/auth/resetPassword/:id",
+        destination: "/auth/reset/konfirmasi/:id",
       },
       {
         source: "/konfirmasi-login",
