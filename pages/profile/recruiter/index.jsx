@@ -1,28 +1,16 @@
 import React from "react";
 import styles from "./Profile.module.css";
-import {
-  IoMailOutline,
-  IoLogoInstagram,
-  IoCallOutline,
-  IoLogoLinkedin,
-  IoLocationOutline,
-} from "react-icons/io5";
+import { IoMailOutline, IoLogoInstagram, IoCallOutline, IoLogoLinkedin, IoLocationOutline } from "react-icons/io5";
 export default function index() {
   return (
     <div className={styles.container}>
       <div className=" h-75 w-75 d-flex m-auto justify-content-center pt-5">
-        <div
-          className={` w-100 d-flex flex-column align-items-center ${styles.contentContainer}`}
-        >
+        <div className={` w-100 d-flex flex-column align-items-center ${styles.contentContainer}`}>
           <div className=" my-5">
             <img src="../../user1.png" style={{ width: "150px" }} alt="" />
           </div>
-          <span style={{ fontSize: "22px", fontWeight: "600" }}>
-            Pt. martabat jaya abadi
-          </span>
-          <span style={{ fontSize: "14px", marginBottom: "10px" }}>
-            Financial
-          </span>
+          <span style={{ fontSize: "22px", fontWeight: "600" }}>Pt. martabat jaya abadi</span>
+          <span style={{ fontSize: "14px", marginBottom: "10px" }}>Financial</span>
           <div className=" mb-2">
             <IoLocationOutline />
             <span
@@ -44,9 +32,7 @@ export default function index() {
               textAlign: "center",
             }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-            erat orci, mollis nec gravida sed, ornare quis urna. Curabitur eu
-            lacus fringilla, vestibulum risus at.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat orci, mollis nec gravida sed, ornare quis urna. Curabitur eu lacus fringilla, vestibulum risus at.
           </span>
           <div className=" my-4">
             <button

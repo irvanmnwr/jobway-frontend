@@ -1,34 +1,12 @@
 import React, { useState } from "react";
 import styles from "./Profile.module.css";
 import Footer from "../../../component/Footer";
-import {
-  IoMailOutline,
-  IoLogoInstagram,
-  IoLogoGithub,
-  IoLogoGitlab,
-} from "react-icons/io5";
+import { IoMailOutline, IoLogoInstagram, IoLogoGithub, IoLogoGitlab } from "react-icons/io5";
 export default function Portofolio() {
   const [menuPorto, setMenuPorto] = useState(true);
   const [menuPengalaman, setMenuPengalaman] = useState(false);
-  const skills = [
-    "python",
-    "laraver",
-    "Golang",
-    "javascript",
-    "php",
-    "html",
-    "c++",
-    "kotlin",
-    "swift",
-  ];
-  const portoWeb = [
-    "Remainder app",
-    "Social media app",
-    "Project management web",
-    "Remainder app",
-    "Social media app",
-    "Project management web",
-  ];
+  const skills = ["python", "laraver", "Golang", "javascript", "php", "html", "c++", "kotlin", "swift"];
+  const portoWeb = ["Remainder app", "Social media app", "Project management web", "Remainder app", "Social media app", "Project management web"];
   const handleMenu = (e) => {
     console.log(e);
     if (e === "portofolio") {
@@ -52,10 +30,7 @@ export default function Portofolio() {
           <div className=" d-flex flex-column">
             <div className={`d-flex flex-column ${styles.detailUser}`}>
               <span className=" fw-bold fs-5 my-3">Louis Tomlison</span>
-              <span
-                className=""
-                style={{ fontSize: "14px", lineHeight: "24px" }}
-              >
+              <span className="" style={{ fontSize: "14px", lineHeight: "24px" }}>
                 Web Developer
               </span>
               <span
@@ -93,9 +68,7 @@ export default function Portofolio() {
                     color: "#9EA0A5",
                   }}
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Vestibulum erat orci, mollis nec gravida sed, ornare quis
-                  urna. Curabitur eu lacus fringilla, vestibulum risus at.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat orci, mollis nec gravida sed, ornare quis urna. Curabitur eu lacus fringilla, vestibulum risus at.
                 </span>
               </div>
             </div>
@@ -141,65 +114,34 @@ export default function Portofolio() {
             </div>
           </div>
         </div>
-        <div
-          className={`mx-xl-4 container h-100 mt-xl-0 mt-3`}
-          style={{ flex: 4 }}
-        >
+        <div className={`mx-xl-4 container h-100 mt-xl-0 mt-3`} style={{ flex: 4 }}>
           <div className={styles.userPorto}>
             <div className={`pt-xl-3 container ${styles.portoMenu}`}>
-              <span
-                className={menuPorto ? styles.menuActive : styles.notActive}
-                style={{ cursor: "pointer" }}
-                onClick={() => handleMenu("portofolio")}
-              >
+              <span className={menuPorto ? styles.menuActive : styles.notActive} style={{ cursor: "pointer" }} onClick={() => handleMenu("portofolio")}>
                 Portofolio
               </span>
-              <span
-                className={
-                  menuPengalaman ? styles.menuActive : styles.notActive
-                }
-                style={{ cursor: "pointer" }}
-                onClick={() => handleMenu("pengalaman")}
-              >
+              <span className={menuPengalaman ? styles.menuActive : styles.notActive} style={{ cursor: "pointer" }} onClick={() => handleMenu("pengalaman")}>
                 Pengalaman Kerja
               </span>
             </div>
             <div className={` mt-3 ${menuPorto ? "" : "d-none"} `}>
               {portoWeb.map((item, index) => (
-                <div
-                  key={index}
-                  className={`d-inline-block flex-column text-center mx-3 my-3 ${styles.portoMain}`}
-                >
-                  <img
-                    className="w-100 d-block mb-3"
-                    style={{ width: "200px" }}
-                    src={`../../porto${index}.png`}
-                    alt=""
-                  />
+                <div key={index} className={`d-inline-block flex-column text-center mx-3 my-3 ${styles.portoMain}`}>
+                  <img className="w-100 d-block mb-3" style={{ width: "200px" }} src={`../../porto${index}.png`} alt="" />
                   <span>{item}</span>
                 </div>
               ))}
             </div>
-            <div
-              className={`container d-flex flex-column w-100 ${
-                menuPengalaman ? "" : "d-none"
-              }`}
-            >
+            <div className={`container d-flex flex-column w-100 ${menuPengalaman ? "" : "d-none"}`}>
               <div className=" d-flex mt-4">
-                <img
-                  style={{ width: "65px", height: "65px" }}
-                  src="../../work.png"
-                  alt=""
-                />
+                <img style={{ width: "65px", height: "65px" }} src="../../work.png" alt="" />
                 <div className=" d-flex flex-column ms-4">
                   <span className="" style={{ fontSize: "20px" }}>
                     Engineer
                   </span>
                   <span style={{ fontSize: "18px" }}>tokopedia</span>
                   <div>
-                    <span style={{ fontSize: "16px", color: "#9EA0A5" }}>
-                      July 2019 - January 2020
-                    </span>
+                    <span style={{ fontSize: "16px", color: "#9EA0A5" }}>July 2019 - January 2020</span>
                     <span
                       style={{
                         fontSize: "16px",
@@ -210,28 +152,18 @@ export default function Portofolio() {
                       6 months
                     </span>
                   </div>
-                  <span style={{ fontSize: "14px" }}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Vestibulum erat orci, mollis nec gravida sed, ornare quis
-                    urna. Curabitur eu lacus fringilla, vestibulum risus at.
-                  </span>
+                  <span style={{ fontSize: "14px" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat orci, mollis nec gravida sed, ornare quis urna. Curabitur eu lacus fringilla, vestibulum risus at.</span>
                 </div>
               </div>
               <div className=" d-flex mt-4">
-                <img
-                  style={{ width: "65px", height: "65px" }}
-                  src="../../work.png"
-                  alt=""
-                />
+                <img style={{ width: "65px", height: "65px" }} src="../../work.png" alt="" />
                 <div className=" d-flex flex-column ms-4">
                   <span className="" style={{ fontSize: "20px" }}>
                     Engineer
                   </span>
                   <span style={{ fontSize: "18px" }}>tokopedia</span>
                   <div>
-                    <span style={{ fontSize: "16px", color: "#9EA0A5" }}>
-                      July 2019 - January 2020
-                    </span>
+                    <span style={{ fontSize: "16px", color: "#9EA0A5" }}>July 2019 - January 2020</span>
                     <span
                       style={{
                         fontSize: "16px",
@@ -242,11 +174,7 @@ export default function Portofolio() {
                       6 months
                     </span>
                   </div>
-                  <span style={{ fontSize: "14px" }}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Vestibulum erat orci, mollis nec gravida sed, ornare quis
-                    urna. Curabitur eu lacus fringilla, vestibulum risus at.
-                  </span>
+                  <span style={{ fontSize: "14px" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat orci, mollis nec gravida sed, ornare quis urna. Curabitur eu lacus fringilla, vestibulum risus at.</span>
                 </div>
               </div>
             </div>
