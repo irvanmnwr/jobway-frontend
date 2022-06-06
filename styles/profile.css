@@ -1,0 +1,479 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap");
+.profile__main {
+  background: #e5e5e5;
+  height: 3300px;
+}
+.backgroundPart {
+  background-color: #5e50a1;
+  height: 500px;
+  padding-top: 15px;
+}
+/* Employer Styling */
+.employer__main {
+  margin-top: 90px;
+}
+.employer__cardProfile {
+  height: 600px;
+  background: #ffffff;
+  border-radius: 8px;
+  align-items: center;
+  text-align: center;
+}
+.employer__photo {
+  align-items: center;
+  text-align: center;
+  padding-top: 20px;
+}
+.employer__photoBorder {
+  border-radius: 50%;
+}
+.employer__editButton {
+  border: none;
+  background: none;
+  margin-top: 10px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 56px;
+  color: #9ea0a5;
+}
+.employer__profileInfo {
+  text-align: left;
+  align-items: left;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.employer__name {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  color: #1f2a36;
+}
+.employer__job {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #1f2a36;
+}
+.employer__typeJob {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #9ea0a5;
+}
+.employer__locationPhone {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #9ea0a5;
+}
+.employer__buttonCardProfile {
+  width: 100%;
+  height: 50px;
+  margin-top: 20px;
+  background: #5e50a1;
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+}
+.employer__buttonCardProfile:hover {
+  color: #ffffff;
+  background: #fbb017;
+}
+.employer__cardEdit {
+  height: 800px;
+  background: #ffffff;
+  border-radius: 8px;
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
+.employer__tittleCard {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  color: #1f2a36;
+  margin-left: 20px;
+}
+.employer__setForm {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.employer__labelForm {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  color: #9ea0a5;
+}
+.employer__inputForm {
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+  height: 50px;
+  background: #ffffff;
+  border: 1px solid #e2e5ed;
+  border-radius: 4px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #858d96;
+}
+.employer__inputForm:focus {
+  border: 2px solid #fbb017;
+  color: #fbb017;
+  outline: #fbb017;
+}
+.employer__Description {
+  height: 120px;
+}
+.employer__buttonInfoProfile {
+  background: none;
+  border-radius: 4px;
+  border: 1px solid #fbb017;
+  height: 50px;
+  width: 80px;
+  margin-left: 88%;
+  color: #fbb017;
+}
+.employer__buttonInfoProfile:hover {
+  color: #ffffff;
+  background: #fbb017;
+}
+.employer__skillEdit {
+  height: 500px;
+  background: #ffffff;
+  border-radius: 8px;
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
+.employer__buttonSkillProfile {
+  background: none;
+  border-radius: 4px;
+  border: 1px solid #fbb017;
+  height: 50px;
+  width: 80px;
+  margin-left: 15px;
+  color: #fbb017;
+}
+.employer__buttonSkillProfile:hover {
+  color: #ffffff;
+  background: #fbb017;
+}
+.employer__skillList {
+  margin-left: 20px;
+  align-items: center;
+  text-align: center;
+  width: 20%;
+  background: rgba(251, 176, 23, 0.6);
+  border: 1px solid #fbb017;
+  border-radius: 4px;
+  color: #ffffff;
+}
+.employer__deleteList {
+  border: none;
+  background: none;
+  color: #ffffff;
+}
+.employer__workEdit {
+  height: 600px;
+  background: #ffffff;
+  border-radius: 8px;
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
+
+.employer__buttonJob {
+  border: 1px solid #fbb017;
+  border-radius: 4px;
+  color: #fbb017;
+  background: none;
+  width: 96%;
+  height: 50px;
+  margin-left: 2%;
+}
+.employer__buttonJob:hover {
+  color: #ffffff;
+  background-color: #fbb017;
+}
+.employer__portfolioEdit {
+  height: 850px;
+  background: #ffffff;
+  border-radius: 8px;
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
+.employer__uploadImagePorto {
+  width: 820px;
+  height: 400px;
+}
+/* Recruiter Styling */
+.recruiter__main {
+  margin-top: 90px;
+}
+.recruiter__cardProfile {
+  height: 500px;
+  background: #ffffff;
+  border-radius: 8px;
+  align-items: center;
+  text-align: center;
+  padding-right: 20px;
+}
+.recruiter__photo {
+  align-items: center;
+  text-align: center;
+  padding-top: 20px;
+}
+.recruiter__photoBorder {
+  border-radius: 50%;
+}
+.recruiter__editButton {
+  border: none;
+  background: none;
+  margin-top: 10px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 56px;
+  color: #9ea0a5;
+}
+.recruiter__profileInfo {
+  text-align: left;
+  align-items: left;
+  padding-left: 20px;
+}
+.recruiter__name {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  color: #1f2a36;
+}
+.recruiter__job {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #1f2a36;
+}
+.recruiter__locationPhone {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #9ea0a5;
+}
+.recruiter__buttonCardProfile {
+  width: 100%;
+  height: 50px;
+  margin-top: 20px;
+  background: #5e50a1;
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+}
+.recruiter__buttonCardProfile:hover {
+  color: #ffffff;
+  background: #fbb017;
+}
+
+.recruiter__cardEdit {
+  height: 1000px;
+  background: #ffffff;
+  border-radius: 8px;
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
+.recruiter__tittleCard {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  color: #1f2a36;
+  margin-left: 20px;
+}
+.recruiter__setForm {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.recruiter__labelForm {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  color: #9ea0a5;
+}
+.recruiter__inputForm {
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+  height: 50px;
+  background: #ffffff;
+  border: 1px solid #e2e5ed;
+  border-radius: 4px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #858d96;
+}
+.recruiter__inputForm:focus {
+  border: 2px solid #fbb017;
+  color: #fbb017;
+  outline: #fbb017;
+}
+.recruiter__Description {
+  height: 120px;
+}
+
+/* Alert Styling */
+.profileAlert__main {
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  padding-left: 40%;
+  background: rgba(0, 0, 0, 0.5);
+  height: 960px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.profileAlert__card {
+  padding: 30px;
+  padding-top: 80px;
+  width: 503px;
+  height: 417px;
+  background: #ffffff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 25px;
+}
+.profileAlert__tittle {
+  text-align: center;
+  margin-bottom: 50px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  color: #3a3d42;
+}
+.profileAlert__icon {
+  color: #fbb017;
+  margin-bottom: 50px;
+}
+.profileAlert__button {
+  border: 2px solid #fbb017;
+  width: 50%;
+  border-radius: 12px;
+  color: #fbb017;
+  background: none;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+}
+/* Change Password Modal*/
+.edit__main {
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding-left: 40%;
+  background: rgba(0, 0, 0, 0.5);
+  height: 960px;
+  text-align: center;
+  align-items: center;
+}
+.edit__card {
+  padding: 30px;
+  width: 503px;
+  height: 517px;
+  background: #ffffff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 25px;
+}
+.edit__tittle {
+  text-align: left;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  color: #3a3d42;
+}
+.edit__des {
+  margin-top: 20px;
+  text-align: left;
+  width: 50%;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 30px;
+  color: rgba(58, 61, 66, 0.6);
+}
+.edit__label {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  color: #4d4b57;
+}
+.edit__input {
+  text-align: center;
+  margin-bottom: 10px;
+  width: 90%;
+  height: 40px;
+  background: #ffffff;
+  border: 1px solid rgba(169, 169, 169, 0.6);
+  box-shadow: 0px 10px 75px rgba(147, 147, 147, 0.1);
+  border-radius: 10px;
+}
+.edit__close {
+  border: none;
+  background: none;
+  color: #fbb017;
+}
+.edit__button {
+  margin-top: 50px;
+  padding-right: 20px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: right;
+}
+.edit__submitButton {
+  width: 40%;
+  height: 50px;
+  border: none;
+  background: #5e50a1;
+  box-shadow: 0px 6px 75px rgba(100, 87, 87, 0.05);
+  border-radius: 12px;
+  color: #ffffff;
+}
+.edit__submitButton:hover {
+  background: #fbb017;
+}
+.edit__imageForm {
+  margin-top: 50px;
+  width: 80%;
+  height: 50px;
+}
