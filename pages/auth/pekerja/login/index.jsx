@@ -5,6 +5,7 @@ import axios from "../../../../utils/axios";
 import Router from "next/router";
 import { useDispatch } from "react-redux";
 import { login } from "../../../../store/actions/auth";
+import Cookies from "js-cookie";
 
 export default function PekerjaLogin() {
   const dispatch = useDispatch();
@@ -27,12 +28,14 @@ export default function PekerjaLogin() {
     try {
       const result = await axios.post(`/auth/login`, data);
       console.log(result);
+      Cookies.set("token", result.data.data.token);
       setAlert({
         ...alert,
         show: true,
         staus: 200,
         text: "success login, please Wait",
       });
+
       dispatch(login(result.data.data.id));
       setTimeout(function () {
         Router.push("/home");
@@ -42,8 +45,8 @@ export default function PekerjaLogin() {
       setAlert({
         ...alert,
         show: true,
-        // text: error.response.data.msg,
-        // staus: error.response.data.status,
+        text: error.response.data.msg,
+        staus: error.response.data.status,
       });
     }
   };
