@@ -45,8 +45,12 @@ const nextConfig = {
         destination: "/auth/reset/login",
       },
       {
-        source: "/home",
+        source: "/homepage",
         destination: "/landing",
+      },
+      {
+        source: "/View-Employee",
+        destination: "/home",
       },
 
       {

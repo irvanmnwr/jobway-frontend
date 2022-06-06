@@ -44,7 +44,7 @@ export default function index(props) {
   };
 
   const handleProfile = (id) => {
-    router.push(`/link/${id}`);
+    router.push(`/profile/employer/${id}`);
   };
   return (
     <>
