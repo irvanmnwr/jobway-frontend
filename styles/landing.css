@@ -23,6 +23,13 @@ nav {
   height: 35px;
 }
 
+.navbar-nav-home a {
+  color: #1f2a36 !important;
+  font-size: 16px !important;
+  text-decoration: none !important;
+  font-weight: 700 !important;
+}
+
 .landing-nav-btn-purple {
   background-color: #5e50a1;
   border: none;
