@@ -1,45 +1,40 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Hire.module.css";
 import Footer from "../../component/Footer";
-import {
-  IoMailOutline,
-  IoLogoInstagram,
-  IoLogoGithub,
-  IoLogoGitlab,
-} from "react-icons/io5";
 import axios from "../../utils/axios";
 import { useSelector } from "react-redux";
 import photo from "../../public/photoProfile.jpg";
+import { useRouter } from "next/router";
 
 export default function Portofolio() {
+  const router = useRouter();
   const [dataEmployee, setDataEmployee] = useState({});
   const [form, setForm] = useState({});
+  const [dataEmployeeId, setDataEmployeeId] = useState({});
+  const [isRendering, setIsRendering] = useState(true);
 
-  const setRecruiterId = () => {};
+  const recruiterId = useSelector((state) => state.profile.data[0].id);
 
   useEffect(() => {
     getDataUser();
-  }, []);
+  }, [dataEmployeeId]);
 
+  if (router.query.id && isRendering) {
+    setDataEmployeeId(router.query.id);
+    setIsRendering(false);
+  }
   const getDataUser = async () => {
-    let dataEmployeeId = "6051cb0a-1279-4a57-a784-a52711bdeb6d";
     try {
       setForm({
         ...form,
-        recruiterId: useSelector((state) => state.profile.data[0].id),
+        employeeId: dataEmployeeId,
       });
-      dataEmployeeId = "";
+      console.log(dataEmployee);
+      const dataEmployee = await axios.get(`/user/${dataEmployeeId}`);
+      setDataEmployee(dataEmployee.data.data[0]);
     } catch (error) {
-      setForm({
-        ...form,
-        recruiterId: "3872d935-fdc9-442d-955d-e8adc466ec16",
-      });
-      dataEmployeeId = "6051cb0a-1279-4a57-a784-a52711bdeb6d";
+      console.log(error);
     }
-
-    const dataEmployee = await axios.get(`/user/${dataEmployeeId}`);
-    setDataEmployee(dataEmployee.data.data[0]);
-    console.log(dataEmployee);
   };
 
   let skills = [];
@@ -60,27 +55,17 @@ export default function Portofolio() {
   }
   const handleSubject = (e) => {
     setForm({ ...form, subject: e.target.value });
-    console.log(e.target.value);
   };
   const handleMessage = (e) => {
     setForm({ ...form, message: e.target.value });
-    console.log(e.target.value);
   };
   const handleSubmit = async () => {
     try {
-      await axios.post(
-        `/hiring/${
-          dataEmployee.id
-            ? dataEmployee.id
-            : "6051cb0a-1279-4a57-a784-a52711bdeb6d"
-        }`,
-        form
-      );
+      console.log(form);
+      const resultMail = await axios.post(`/hiring/${recruiterId}`, form);
+      console.log(resultMail);
     } catch (error) {
-      const dataEmployee = await axios.post(
-        `/hiring/6051cb0a-1279-4a57-a784-a52711bdeb6d`,
-        form
-      );
+      console.log(error);
     }
   };
   return (
@@ -177,7 +162,7 @@ export default function Portofolio() {
           <div className={styles.formInput}>
             <div className=" d-flex flex-column mb-4">
               <span style={{ fontSize: "32px", marginBottom: "16px" }}>
-                Hubungi Louis Tomlison
+                Hubungi {dataEmployee.name}
               </span>
               <span style={{ fontSize: "18px" }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
