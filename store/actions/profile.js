@@ -18,9 +18,3 @@ export const updatePasswordUser = (id, form) => {
     payload: axios.patch(`user/password/${id}`, form),
   };
 };
-export const createExperience = (data) => {
-  return {
-    type: "POST_EXPERIENCE",
-    payload: axios.post(`workexperience`, data),
-  };
-};

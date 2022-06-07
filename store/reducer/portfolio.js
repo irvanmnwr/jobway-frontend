@@ -4,15 +4,15 @@ const initialState = {
   data: {},
   msg: "",
 };
-const profile = (state = initialState, action) => {
+const portfolio = (state = initialState, action) => {
   switch (action.type) {
-    case "GET_USER_BY_ID_PENDING": {
+    case "GET_PORTFOLIO_BY_ID_PENDING": {
       return {
         ...state,
         isLoading: true,
       };
     }
-    case "GET_USER_BY_ID_FULFILLED": {
+    case "GET_PORTFOLIO_BY_ID_FULFILLED": {
       return {
         ...state,
         isLoading: false,
@@ -20,7 +20,7 @@ const profile = (state = initialState, action) => {
         msg: action.payload.data.msg,
       };
     }
-    case "GET_USER_BY_ID_REJECTED": {
+    case "GET_PORTFOLIO_BY_ID_REJECTED": {
       return {
         ...state,
         isError: true,
@@ -29,14 +29,14 @@ const profile = (state = initialState, action) => {
         msg: action.payload.response.data.msg,
       };
     }
-    case "UPDATE_USER_PENDING": {
+    case "POST_PORTFOLIO_PENDING": {
       return {
         ...state,
         isLoading: true,
         isError: false,
       };
     }
-    case "UPDATE_USER_FULFILLED": {
+    case "POST_PORTFOLIO_FULFILLED": {
       return {
         ...state,
         isLoading: false,
@@ -44,7 +44,7 @@ const profile = (state = initialState, action) => {
         msg: action.payload.data.msg,
       };
     }
-    case "UPDATE_USER_REJECTED": {
+    case "POST_PORTFOLIO_REJECTED": {
       return {
         ...state,
         isLoading: false,
@@ -52,14 +52,14 @@ const profile = (state = initialState, action) => {
         msg: action.payload.data.msg,
       };
     }
-    case "UPDATE_PASSWORD_USER_PENDING": {
+    case "DELETE_PORTFOLIO_PENDING": {
       return {
         ...state,
         isLoading: true,
         isError: false,
       };
     }
-    case "UPDATE_PASSWORD_USER_FULFILLED": {
+    case "DELETE_PORTFOLIO_FULFILLED": {
       return {
         ...state,
         isLoading: false,
@@ -67,12 +67,35 @@ const profile = (state = initialState, action) => {
         msg: action.payload.data.msg,
       };
     }
-    case "UPDATE_PASSWORD_USER_REJECTED": {
+    case "DELETE_PORTFOLIO_REJECTED": {
       return {
         ...state,
         isLoading: false,
         isError: true,
         msg: action.payload.response.data.msg,
+      };
+    }
+    case "UPDATE_PORTFOLIO_PENDING": {
+      return {
+        ...state,
+        isLoading: true,
+        isError: false,
+      };
+    }
+    case "UPDATE_PORTFOLIO_FULFILLED": {
+      return {
+        ...state,
+        isLoading: false,
+        isError: false,
+        msg: action.payload.data.msg,
+      };
+    }
+    case "UPDATE_PORTFOLIO_REJECTED": {
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+        msg: action.payload.data.msg,
       };
     }
     default: {
@@ -81,4 +104,4 @@ const profile = (state = initialState, action) => {
   }
 };
 
-export default profile;
+export default portfolio;
