@@ -10,6 +10,9 @@ import {
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
 
+import Navbar from "../../../component/Navbar";
+import Footer from "../../../component/Footer";
+
 export default function index() {
   const router = useRouter();
   const recruiter = useSelector((state) => state.profile.data[0]);
@@ -19,6 +22,8 @@ export default function index() {
   };
 
   return (
+    <div>
+    <Navbar / >
     <div className={styles.container}>
       <div className=" h-75 w-75 d-flex m-auto justify-content-center pt-5">
         <div
@@ -121,6 +126,8 @@ export default function index() {
           </div>
         </div>
       </div>
+    </div>
+    <Footer />
     </div>
   );
 }
