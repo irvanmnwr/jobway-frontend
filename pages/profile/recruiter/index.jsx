@@ -1,16 +1,38 @@
 import React from "react";
 import styles from "./Profile.module.css";
-import { IoMailOutline, IoLogoInstagram, IoCallOutline, IoLogoLinkedin, IoLocationOutline } from "react-icons/io5";
+import {
+  IoMailOutline,
+  IoLogoInstagram,
+  IoCallOutline,
+  IoLogoLinkedin,
+  IoLocationOutline,
+} from "react-icons/io5";
+import { useSelector } from "react-redux";
+import { useRouter } from "next/router";
+
 export default function index() {
+  const router = useRouter();
+  const recruiter = useSelector((state) => state.profile.data[0]);
+
+  const handleEditProfile = () => {
+    router.push("/editprofile/recruiter");
+  };
+
   return (
     <div className={styles.container}>
       <div className=" h-75 w-75 d-flex m-auto justify-content-center pt-5">
-        <div className={` w-100 d-flex flex-column align-items-center ${styles.contentContainer}`}>
+        <div
+          className={` w-100 d-flex flex-column align-items-center ${styles.contentContainer}`}
+        >
           <div className=" my-5">
             <img src="../../user1.png" style={{ width: "150px" }} alt="" />
           </div>
-          <span style={{ fontSize: "22px", fontWeight: "600" }}>Pt. martabat jaya abadi</span>
-          <span style={{ fontSize: "14px", marginBottom: "10px" }}>Financial</span>
+          <span style={{ fontSize: "22px", fontWeight: "600" }}>
+            {recruiter.company}
+          </span>
+          <span style={{ fontSize: "14px", marginBottom: "10px" }}>
+            {recruiter.companyType}
+          </span>
           <div className=" mb-2">
             <IoLocationOutline />
             <span
@@ -20,7 +42,7 @@ export default function index() {
                 marginLeft: "10px",
               }}
             >
-              Purwokerto jawa tengah
+              {recruiter.domicilie}
             </span>
           </div>
 
@@ -32,7 +54,7 @@ export default function index() {
               textAlign: "center",
             }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat orci, mollis nec gravida sed, ornare quis urna. Curabitur eu lacus fringilla, vestibulum risus at.
+            {recruiter.description}
           </span>
           <div className=" my-4">
             <button
@@ -42,6 +64,7 @@ export default function index() {
                 backgroundColor: "#5E50A1",
                 color: "white",
               }}
+              onClick={handleEditProfile}
             >
               Edit Profile
             </button>
@@ -56,7 +79,7 @@ export default function index() {
                   marginLeft: "10px",
                 }}
               >
-                martabatjaya@gmail.com
+                {recruiter.email}
               </span>
             </div>
             <div className=" mt-3">
@@ -68,7 +91,7 @@ export default function index() {
                   marginLeft: "10px",
                 }}
               >
-                martabatjaya@gmail.com
+                {recruiter.instagram}
               </span>
             </div>
             <div className=" mt-3">
@@ -80,7 +103,7 @@ export default function index() {
                   marginLeft: "10px",
                 }}
               >
-                martabatjaya@gmail.com
+                {recruiter.noTelp}
               </span>
             </div>
             <div className=" mt-3">
@@ -92,7 +115,7 @@ export default function index() {
                   marginLeft: "10px",
                 }}
               >
-                martabatjaya@gmail.com
+                {recruiter.linkedIn}
               </span>
             </div>
           </div>
