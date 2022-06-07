@@ -6,6 +6,8 @@ import { updatePasswordUser, getUserById } from "../../store/actions/profile";
 export default function Editprofilepassword({ showChangePassword, setShowChangePassword, setShowAlert, id }) {
   const dispatch = useDispatch();
   const [form, setForm] = useState({});
+  const [isError, setIsError] = useState(false);
+  const [msg, setMsg] = useState("");
   const handleFormEdit = (e) => {
     e.preventDefault();
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -24,8 +26,11 @@ export default function Editprofilepassword({ showChangePassword, setShowChangeP
       getDataByUserId();
       setShowChangePassword(false);
       setShowAlert(true);
+      setIsError(false);
     } catch (error) {
       console.log(error);
+      setMsg(error.response.data.msg);
+      setIsError(true);
     }
   };
 
@@ -53,6 +58,11 @@ export default function Editprofilepassword({ showChangePassword, setShowChangeP
                 <input type="text" className="edit__input" name="newPassword" placeholder="Masukan Password Baru" onChange={handleFormEdit} />
                 <h1 className="edit__label">Konfirmasi Password Baru</h1>
                 <input type="text" className="edit__input" name="confirmPassword" placeholder="Masukan Password Baru" onChange={handleFormEdit} />
+                {!isError ? null : (
+                  <div className="edit__alert" role="alert">
+                    {msg}
+                  </div>
+                )}
                 <div className="edit__button">
                   <button className="edit__submitButton" onClick={handleEdit}>
                     Ubah

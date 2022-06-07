@@ -86,35 +86,35 @@ export default function Recruiter() {
                   <form>
                     <div className="recruiter__setForm">
                       <h1 className="recruiter__labelForm">Nama Perusahaan</h1>
-                      <input type="text" placeholder="Masukan Nama Perusahaan" className="recruiter__inputForm" name="company" onChange={handleChangeForm} />
+                      <input type="text" placeholder={dataUser.company ? dataUser.company : "Masukan Nama Perusahaan"} className="recruiter__inputForm" name="company" onChange={handleChangeForm} />
                     </div>
                     <div className="recruiter__setForm">
                       <h1 className="recruiter__labelForm">Bidang</h1>
-                      <input type="text" placeholder="Masukan Bidang Perusahaan ex: finance" className="recruiter__inputForm" name="companyType" onChange={handleChangeForm} />
+                      <input type="text" placeholder={dataUser.companyType ? dataUser.companyType : "Masukan Bidang Perusahaan ex: finance"} className="recruiter__inputForm" name="companyType" onChange={handleChangeForm} />
                     </div>
                     <div className="recruiter__setForm">
                       <h1 className="recruiter__labelForm">Domisili</h1>
-                      <input type="text" placeholder="Masukan Domisili" className="recruiter__inputForm" name="domicilie" onChange={handleChangeForm} />
+                      <input type="text" placeholder={dataUser.domicilie ? dataUser.domicilie : "Masukan Domisili"} className="recruiter__inputForm" name="domicilie" onChange={handleChangeForm} />
                     </div>
                     <div className="recruiter__setForm">
                       <h1 className="recruiter__labelForm">Deskripsi Singkat</h1>
-                      <input type="text" placeholder="Tuliskan Deskripsi Singkat Anda" className="recruiter__inputForm recruiter__Description" name="description" onChange={handleChangeForm} />
+                      <input type="text" placeholder={dataUser.description ? dataUser.description : "Tuliskan Deskripsi Singkat Anda"} className="recruiter__inputForm recruiter__Description" name="description" onChange={handleChangeForm} />
                     </div>
                     <div className="recruiter__setForm">
                       <h1 className="recruiter__labelForm">Email</h1>
-                      <input type="email" placeholder="Masukan Email" className="recruiter__inputForm" name="email" onChange={handleChangeForm} />
+                      <input type="email" placeholder={dataUser.email ? dataUser.email : "Masukan Email"} className="recruiter__inputForm" name="email" onChange={handleChangeForm} />
                     </div>
                     <div className="recruiter__setForm">
                       <h1 className="recruiter__labelForm">Instagram</h1>
-                      <input type="text" placeholder="Masukan Username IG" className="recruiter__inputForm" name="instagram" onChange={handleChangeForm} />
+                      <input type="text" placeholder={dataUser.instagram ? dataUser.instagram : "Masukan Username IG"} className="recruiter__inputForm" name="instagram" onChange={handleChangeForm} />
                     </div>
                     <div className="recruiter__setForm">
                       <h1 className="recruiter__labelForm">Nomor Telepon</h1>
-                      <input type="text" placeholder="Masukan Nomor Telepon" className="recruiter__inputForm" name="noTelp" onChange={handleChangeForm} />
+                      <input type="text" placeholder={dataUser.noTelp ? dataUser.noTelp : "Masukan Nomor Telepon"} className="recruiter__inputForm" name="noTelp" onChange={handleChangeForm} />
                     </div>
                     <div className="recruiter__setForm">
                       <h1 className="recruiter__labelForm">Linkedin</h1>
-                      <input type="text" placeholder="Masukan Nama Linkedin" className="recruiter__inputForm" name="linkedIn" onChange={handleChangeForm} />
+                      <input type="text" placeholder={dataUser.linkedIn ? dataUser.linkedIn : "Masukan Nama Linkedin"} className="recruiter__inputForm" name="linkedIn" onChange={handleChangeForm} />
                     </div>
                   </form>
                 </div>

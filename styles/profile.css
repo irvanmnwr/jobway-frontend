@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap");
 .profile__main {
   background: #e5e5e5;
-  height: 3300px;
+  height: 3600px;
 }
 .profile__master {
   background: #e5e5e5;
@@ -174,14 +174,18 @@
   background: #fbb017;
 }
 .employer__skillList {
+  padding-top: 10px;
   margin-left: 20px;
   align-items: center;
   text-align: center;
   width: 20%;
-  background: rgba(251, 176, 23, 0.6);
-  border: 1px solid #fbb017;
+  background: #5e50a1;
+  border: none;
   border-radius: 4px;
   color: #ffffff;
+}
+.employer__skillList:hover {
+  background: rgba(251, 176, 23, 0.6);
 }
 .employer__deleteList {
   border: none;
@@ -189,13 +193,12 @@
   color: #ffffff;
 }
 .employer__workEdit {
-  height: 600px;
+  height: 800px;
   background: #ffffff;
   border-radius: 8px;
   padding-top: 30px;
   margin-bottom: 30px;
 }
-
 .employer__buttonJob {
   border: 1px solid #fbb017;
   border-radius: 4px;
@@ -209,16 +212,65 @@
   color: #ffffff;
   background-color: #fbb017;
 }
+.employer__experienceSet {
+  text-align: center;
+  align-items: center;
+}
+.employer__experienceList {
+  padding-top: 10px;
+  margin-left: 10%;
+  width: 80%;
+  border-radius: 10px;
+  background-color: #5e50a1;
+  color: #ffffff;
+}
+.employer__experienceListActive {
+  padding-top: 10px;
+  margin-left: 10%;
+  width: 80%;
+  border-radius: 10px;
+  background-color: rgba(251, 176, 23, 0.6);
+  color: #ffffff;
+}
+.employer__experienceList:hover {
+  background-color: rgba(251, 176, 23, 0.6);
+}
 .employer__portfolioEdit {
-  height: 850px;
+  height: 1050px;
   background: #ffffff;
   border-radius: 8px;
   padding-top: 30px;
   margin-bottom: 30px;
 }
 .employer__uploadImagePorto {
-  width: 820px;
-  height: 400px;
+  height: 300px;
+  padding-top: 50px;
+  align-items: center;
+  text-align: center;
+  border: 2px dashed #9ea0a5;
+}
+.employer__textUpload1 {
+  margin-top: 10px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #1f2a36;
+}
+.employer__textUpload1:hover {
+  color: #fbb017;
+}
+.employer__textUpload2 {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #1f2a36;
+}
+.employer__textUpload2:hover {
+  color: #fbb017;
 }
 /* Recruiter Styling */
 .recruiter__main {
@@ -390,6 +442,10 @@
   font-weight: 700;
   font-size: 18px;
 }
+.profileAlert__button:hover {
+  color: #ffffff;
+  background-color: #fbb017;
+}
 /* Change Password Modal*/
 .edit__main {
   z-index: 1;
@@ -480,4 +536,15 @@
   margin-top: 50px;
   width: 80%;
   height: 50px;
+}
+.edit__alert {
+  margin-top: 10px;
+  width: 100%;
+  background-color: #fbb017;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+  color: #ffffff;
 }

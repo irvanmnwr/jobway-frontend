@@ -6,6 +6,8 @@ import Router from "next/router";
 import { useDispatch } from "react-redux";
 import Cookies from "js-cookie";
 import { getUserById } from "../../../../store/actions/profile";
+import { getExperienceById } from "../../../../store/actions/experience";
+import { getPortfolioById } from "../../../../store/actions/portfolio";
 
 export default function PekerjaLogin() {
   const dispatch = useDispatch();
@@ -34,8 +36,9 @@ export default function PekerjaLogin() {
         staus: 200,
         text: "success login, please Wait",
       });
-
       await dispatch(getUserById(result.data.data.id));
+      await dispatch(getExperienceById(result.data.data.id));
+      await dispatch(getPortfolioById(result.data.data.id));
       setTimeout(function () {
         Router.push("/home");
       }, 3000);
