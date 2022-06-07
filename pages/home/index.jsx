@@ -5,6 +5,9 @@ import Pagination from "react-paginate";
 import { useRouter } from "next/router";
 import SearchIcon from "../../component/search-icon/index";
 
+import Navbar from "../../component/Navbar";
+import Footer from "../../component/Footer";
+
 export async function getServerSideProps(context) {
   try {
     // const dataCookies = cookies(context);
@@ -48,17 +51,7 @@ export default function index(props) {
   };
   return (
     <>
-      <nav className="navbar navbar-expand-lg home__navbar">
-        <div className="container">
-          <p
-            className="navbar-brand fw-bold"
-            href="#"
-            style={{ color: "white", margin: "0px" }}
-          >
-            TOP JOBS
-          </p>
-        </div>
-      </nav>
+      <Navbar />
       <div className="bg-light home">
         <div className="container">
           <div className="card home__search" style={{ margin: "30px 0px" }}>
@@ -173,6 +166,7 @@ export default function index(props) {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

@@ -13,6 +13,8 @@ import {
 } from "react-icons/io5";
 import { useSelector } from "react-redux";
 
+import Navbar from "../../../component/Navbar";
+
 export async function getServerSideProps(context) {
   const params = context.query;
   const dataCookies = cookies(context);
@@ -90,7 +92,10 @@ export default function Portofolio(props) {
   useEffect(() => {
     getExperience();
   }, []);
+  
   return (
+    <div>
+    <Navbar />
     <div className={styles.container}>
       <div className=" container d-xl-flex pt-4 pt-xl-5">
         <div className={styles.gradient}></div>
@@ -298,6 +303,7 @@ export default function Portofolio(props) {
       <div className=" mt-5" style={{ height: "400px" }}>
         <Footer />
       </div>
+    </div>
     </div>
   );
 }

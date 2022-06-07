@@ -7,6 +7,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import "../styles/responsiveProfile.css";
 import "../styles/auth.css";
 import "../styles/landing.css";
+import "../styles/navbar.css";
 
 function MyApp({ Component, pageProps }) {
   return (

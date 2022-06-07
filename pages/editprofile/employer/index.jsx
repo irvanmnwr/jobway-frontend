@@ -12,6 +12,8 @@ import { BiMap, BiPhone, BiTrash } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
 import { updateUser, getUserById, createExperience } from "../../../store/actions/profile";
 
+import Navbar from "../../../component/Navbar";
+
 export default function Employer() {
   const dispatch = useDispatch();
   const router = useRouter();
@@ -105,6 +107,7 @@ export default function Employer() {
   };
   return (
     <div>
+      <Navbar />
       <Editprofilealert setShowAlert={setShowAlert} showAlert={showAlert} />
       <Editprofilepassword setShowChangePassword={setShowChangePassword} showChangePassword={showChangePassword} setShowAlert={setShowAlert} id={dataUser.id} />
       <Editprofilephoto setShowImage={setShowImage} showImage={showImage} setShowAlert={setShowAlert} id={dataUser.id} />

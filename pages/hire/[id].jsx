@@ -6,6 +6,8 @@ import { useSelector } from "react-redux";
 import photo from "../../public/photoProfile.jpg";
 import { useRouter } from "next/router";
 
+import Navbar from "../../component/Navbar";
+
 export default function Portofolio() {
   const router = useRouter();
   const [dataEmployee, setDataEmployee] = useState({});
@@ -73,6 +75,7 @@ export default function Portofolio() {
       className={styles.container}
       style={{ background: " rgba(246, 247, 248, 1)" }}
     >
+      <Navbar />
       <div className=" container d-xl-flex pt-4 pt-xl-5">
         <div className={`${styles.userProfile} container-xl `}>
           <div className=" d-flex justify-content-center mt-xl-4  mb-xl-2  pt-4 pt-xl-">

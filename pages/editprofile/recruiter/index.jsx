@@ -11,6 +11,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Footer from "../../../component/Footer";
 import { updateUser, getUserById } from "../../../store/actions/profile";
 
+import Navbar from "../../../component/Navbar";
+
 export default function Recruiter() {
   const dispatch = useDispatch();
   const router = useRouter();
@@ -48,6 +50,7 @@ export default function Recruiter() {
   };
   return (
     <>
+      <Navbar />
       <Editprofilealert setShowAlert={setShowAlert} showAlert={showAlert} />
       <Editprofilephoto setShowImage={setShowImage} showImage={showImage} setShowAlert={setShowAlert} id={dataUser.id} />
       <div className="profile__master">
