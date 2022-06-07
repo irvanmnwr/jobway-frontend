@@ -10,7 +10,6 @@ import { BiMap, BiPhone } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
 import Footer from "../../../component/Footer";
 import { updateUser, getUserById } from "../../../store/actions/profile";
-
 import Navbar from "../../../component/Navbar";
 
 export default function Recruiter() {

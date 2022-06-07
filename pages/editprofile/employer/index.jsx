@@ -16,7 +16,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateUser, getUserById } from "../../../store/actions/profile";
 import { getPortfolioById, updatePortfolio, deletePortfolio, createPortfolio } from "../../../store/actions/portfolio";
 import { getExperienceById, updateExperience, createExperience, deleteExperience } from "../../../store/actions/experience";
-
 import Navbar from "../../../component/Navbar";
 
 export default function Employer() {
