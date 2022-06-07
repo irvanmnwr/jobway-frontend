@@ -83,7 +83,7 @@ export default function Employer() {
     gitlab: dataUser.gitlab ? dataUser.gitlab : "",
     description: dataUser.description ? dataUser.description : "",
   });
-  const [skillform, setSkillform] = useState(dataUser.skill ? dataUser.skill.split(",") : []);
+  const [skillform, setSkillform] = useState(dataUser.skill !== " " ? dataUser.skill.split(",") : []);
   const handleChangePersonalForm = (e) => {
     e.preventDefault();
     setPersonalform({ ...personalform, [e.target.name]: e.target.value });
@@ -130,6 +130,9 @@ export default function Employer() {
     try {
       const indexTarget = skillform.indexOf(data);
       setSkillform([...skillform.slice(0, indexTarget), ...skillform.slice(indexTarget + 1, skillform.length)]);
+      if (skillform.length === 1) {
+        setSkillform([" "]);
+      }
       setShowAlert(true);
       const dataSkill = { skill: skillform.join(",") };
       const formData = new FormData();
@@ -184,13 +187,15 @@ export default function Employer() {
       console.log(error);
     }
   };
-  const handleUpdateExperience = async (event, id) => {
+  const handleUpdateExperience = async (event, item) => {
     try {
       event.preventDefault();
-      if (idExperience === id) {
+      if (idExperience === item.id) {
         setIdExperience(0);
+        setWorkform({ companyName: "", jobDesc: "", entryDate: "", outDate: "", description: "" });
       } else {
-        setIdExperience(id);
+        setIdExperience(item.id);
+        setWorkform({ companyName: item.companyName, jobDesc: item.jobDesc, entryDate: item.entryDate, outDate: item.outDate, description: item.description });
       }
     } catch (error) {
       console.log(error);
@@ -245,13 +250,15 @@ export default function Employer() {
       console.log(error);
     }
   };
-  const handleUpdatePortfolio = async (event, id) => {
+  const handleUpdatePortfolio = async (event, item) => {
     try {
       event.preventDefault();
-      if (idPortfolio === id) {
+      if (idPortfolio === item.id) {
         setIdPortfolio(0);
+        setPortfolioform({ applicationName: "", repositoryName: "" });
       } else {
-        setIdPortfolio(id);
+        setPortfolioform({ applicationName: item.applicationName, repositoryName: item.repositoryName });
+        setIdPortfolio(item.id);
       }
     } catch (error) {
       console.log(error);
@@ -352,7 +359,7 @@ export default function Employer() {
                     <div className="row">
                       <div className="col-10">
                         <div className="employer__setForm">
-                          <input type="text" placeholder="Masukan Keterampilan dan ENTER untuk Menambah" value={skill} className="employer__inputForm" name="skill" onKeyPress={handleChangeSkillForm} />
+                          <input type="text" placeholder="Masukan Keterampilan dan ENTER untuk Menambah" className="employer__inputForm" name="skill" onKeyPress={handleChangeSkillForm} />
                         </div>
                       </div>
                       <div className="col-2">
@@ -364,20 +371,22 @@ export default function Employer() {
                   </form>
                   <div className="row mx-1">
                     {skillform
-                      ? skillform.map((item) => (
-                          <div className="col-auto employer__skillList mb-1" key={item}>
-                            <div className="row">
-                              <div className="col-7">
-                                <p>{item}</p>
-                              </div>
-                              <div className="col-4">
-                                <button className="employer__deleteList" onClick={() => handleDeleteListSkill(item)}>
-                                  <BiTrash />
-                                </button>
+                      ? skillform.map((item) =>
+                          item === " " ? null : (
+                            <div className="col-auto employer__skillList mb-1" key={item}>
+                              <div className="row">
+                                <div className="col-7">
+                                  <p>{item}</p>
+                                </div>
+                                <div className="col-4">
+                                  <button className="employer__deleteList" onClick={() => handleDeleteListSkill(item)}>
+                                    <BiTrash />
+                                  </button>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        ))
+                          )
+                        )
                       : null}
                   </div>
                 </div>
@@ -431,7 +440,7 @@ export default function Employer() {
                                   <p>{item.jobDesc + " di " + item.companyName}</p>
                                 </div>
                                 <div className="col-2">
-                                  <button className="employer__deleteList" onClick={(e) => handleUpdateExperience(e, item.id)}>
+                                  <button className="employer__deleteList" onClick={(e) => handleUpdateExperience(e, item)}>
                                     <BiEditAlt />
                                   </button>
                                 </div>
@@ -483,7 +492,7 @@ export default function Employer() {
                                   <p>{"Nama Aplikasi : " + item.applicationName}</p>
                                 </div>
                                 <div className="col-2">
-                                  <button className="employer__deleteList" onClick={(e) => handleUpdatePortfolio(e, item.id)}>
+                                  <button className="employer__deleteList" onClick={(e) => handleUpdatePortfolio(e, item)}>
                                     <BiEditAlt />
                                   </button>
                                 </div>
