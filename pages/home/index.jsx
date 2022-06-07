@@ -3,26 +3,34 @@ import Image from "next/image";
 import axiosServer from "../../utils/axiosServer";
 import Pagination from "react-paginate";
 import { useRouter } from "next/router";
+import Router from "next/router";
 import SearchIcon from "../../component/search-icon/index";
 
 export async function getServerSideProps(context) {
   try {
     // const dataCookies = cookies(context);
     const params = context.query;
+    console.log(params);
     const page = !params?.page ? 1 : params.page;
+    const searchSkill = !params?.searchSkill ? "" : params.searchSkill;
+    const searchType = !params.searchType ? "" : params.searchType;
+
     const result = await axiosServer.get(
-      `user?page=${page}&limit=5`
+      `user?page=${page}&limit=5&searchSkill=${searchSkill}&searchType=${searchType}`
       // {
       //   headers: {
       //     Authorization: `Bearer ${dataCookies.token}`,
       //   },
       // }
     );
+
     return {
       props: {
         data: result.data.data,
         totalPage: result.data.pagination,
         page: page,
+        searchSkill: searchSkill,
+        searchType: searchType,
       },
     };
   } catch (error) {
@@ -34,8 +42,12 @@ export async function getServerSideProps(context) {
 
 export default function index(props) {
   console.log(props);
+
   const router = useRouter();
   const [page, setPage] = useState(props.page);
+  const [searchSkill, setSearchSkill] = useState("");
+  const [sortType, setSortType] = useState("");
+  const path = `/home?page=${props.page}&searchSkill=${props.searchSkill}&searchType=${props.searchType}`;
   const handlePagination = async (data) => {
     // console.log(data.selected + 1);
     await setPage(data.selected + 1);
@@ -46,6 +58,15 @@ export default function index(props) {
   const handleProfile = (id) => {
     router.push(`/profile/employer/${id}`);
   };
+  const handleChange = (e) => {
+    setSearchSkill(e.target.value);
+    if (e.key == "Enter") {
+      Router.push(
+        `/home?page=${props.page}&searchSkill=${e.target.value}&searchType=${props.searchType}`
+      );
+    }
+  };
+  console.log(searchSkill);
   return (
     <>
       <nav className="navbar navbar-expand-lg home__navbar">
@@ -72,6 +93,8 @@ export default function index(props) {
                       placeholder="Search..."
                       aria-label="Search..."
                       aria-describedby="basic-addon2"
+                      onChange={(e) => handleChange(e)}
+                      onKeyDown={(e) => handleChange(e)}
                     />
                     <span className="input-group-text" id="basic-addon2">
                       <SearchIcon />
@@ -82,15 +105,35 @@ export default function index(props) {
                   <select
                     className="form-select"
                     aria-label="Default select example"
+                    onChange={(e) =>
+                      Router.push(
+                        `/home?page=${props.page}&searchSkill=${props.searchSkill}&searchType=${e.target.value}`
+                      )
+                    }
                   >
-                    <option defaultValue={""}>Kategori</option>
-                    <option value="1">Sortir berdasarkan Skill</option>
-                    <option value="2">Sortir berdasarkan Freelance</option>
-                    <option value="3">Sortir berdasarkan Fulltime</option>
+                    <option value="">Kategori</option>
+
+                    <option value="Part-Time">
+                      Sortir berdasarkan Freelance
+                    </option>
+                    <option value="Fulltime">
+                      Sortir berdasarkan Fulltime
+                    </option>
+                    <option value="Onsite">Sortir berdasarkan Onsite</option>
+                    <option value="Remote">Sortir berdasarkan Remote</option>
                   </select>
                 </div>
                 <div className="col-2">
-                  <button className="btn btn-primary col-12">Search</button>
+                  <button
+                    className="btn btn-primary col-12"
+                    onClick={() =>
+                      Router.push(
+                        `/home?page=${props.page}&searchSkill=${searchSkill}&searchType=${props.searchType}`
+                      )
+                    }
+                  >
+                    Search
+                  </button>
                 </div>
               </div>
             </div>

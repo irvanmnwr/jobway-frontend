@@ -161,7 +161,7 @@ export default function Portofolio(props) {
               <div className=" mb-3">
                 <button
                   className={styles.buttonHire}
-                  onClick={() => Router.push(`/hire?id=${user.id}`)}
+                  onClick={() => Router.push(`/hire/${user.id}`)}
                 >
                   Hire
                 </button>
