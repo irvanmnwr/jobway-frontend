@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light pt-4 pb-4">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light pt-4 pb-4 navbar-app">
         <div className="container">
             <Image src="/../../images/landing/auth-logo-purple.svg" alt="auth-logo-purple" width={127} height={35}/>
             <button
