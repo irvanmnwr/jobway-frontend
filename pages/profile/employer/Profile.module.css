@@ -14,7 +14,7 @@
   height: 100%;
   width: 360px;
   padding-bottom: 20px;
-
+  border-radius: 8px;
   background: white;
 }
 .detailsUser span {
@@ -63,6 +63,7 @@
   background-color: #fff;
   padding-bottom: 20px;
   padding-left: 20px;
+  border-radius: 8px;
 }
 .portoCv {
   height: 100%;
