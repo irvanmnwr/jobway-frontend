@@ -55,7 +55,7 @@ export default function Navbar() {
             </Dropdown>
             </div>
             <div className="me-5">
-              <Link href="">
+              <Link href="../../chat">
                 <Image src="/../../images/navbar/mail.svg" alt="auth-logo-purple" width={24} height={24}/>
               </Link>
             </div>
