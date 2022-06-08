@@ -39,9 +39,20 @@ export default function Navbar() {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             </ul>
             <div className="me-5">
-              <Link href="">
+            <Dropdown>
+              <Dropdown.Toggle className="user-btn-nav" variant="success" id="dropdown-basic">
                 <Image src="/../../images/navbar/bell.svg" alt="auth-logo-purple" width={24} height={24}/>
-              </Link>
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu className="user-toggle">
+                <Dropdown.Item className="user-toggle-item" href="#/action-1">
+                  <div className="p-5">
+                    <Image src="/../../images/navbar/notif-ilu.svg" alt="auth-logo-purple" width={117} height={76}/>
+                    <p>Belum ada notifikasi</p>
+                  </div>
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
             </div>
             <div className="me-5">
               <Link href="">

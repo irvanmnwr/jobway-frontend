@@ -8,6 +8,7 @@ import "../styles/responsiveProfile.css";
 import "../styles/auth.css";
 import "../styles/landing.css";
 import "../styles/navbar.css";
+import "../styles/all.css";
 
 function MyApp({ Component, pageProps }) {
   return (
