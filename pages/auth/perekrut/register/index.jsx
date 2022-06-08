@@ -4,6 +4,29 @@ import Link from "next/link";
 import axios from "../../../../utils/axios";
 import Router from "next/router";
 
+//Private Route
+import cookies from "next-cookies";
+export async function getServerSideProps(context) {
+  try {
+    const dataCookie = cookies(context);
+    if (dataCookie.token) {
+      throw TypeError("Already authorized");
+    }
+    return {
+      props: {
+        data: dataCookie,
+      },
+    };
+  } catch (error) {
+    return {
+      redirect: {
+        destination: "/landing",
+        permanent: false,
+      },
+    };
+  }
+}
+
 export default function PerekrutRegister() {
   const [data, setData] = useState({
     name: "",
@@ -60,104 +83,52 @@ export default function PerekrutRegister() {
     <div>
       <Layout title="Jobway | Perekrut Register">
         <h2>Halo, Pewpeople</h2>
-        <p className="mb-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod
-          ipsum et dui rhoncus auctor.
-        </p>
+        <p className="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dui rhoncus auctor.</p>
         <form className="auth-form" onSubmit={handleSubmit}>
-          <div
-            className={`alert ${
-              alert.staus == 400 || alert.staus == 404
-                ? "alert-danger"
-                : "alert-primary"
-            }   text-center ${alert.show ? "fadeIn" : "fadeOut"}`}
-            role="alert"
-          >
+          <div className={`alert ${alert.staus == 400 || alert.staus == 404 ? "alert-danger" : "alert-primary"}   text-center ${alert.show ? "fadeIn" : "fadeOut"}`} role="alert">
             {alert.text}
           </div>
           <div className="mb-3">
             <label htmlFor="" className="form-label">
               Nama
             </label>
-            <input
-              type="text"
-              name="name"
-              className="form-control"
-              placeholder="Masukan nama panjang"
-              onChange={(e) => handleChange(e)}
-            />
+            <input type="text" name="name" className="form-control" placeholder="Masukan nama panjang" onChange={(e) => handleChange(e)} />
           </div>
           <div className="mb-3">
             <label htmlFor="" className="form-label">
               Email
             </label>
-            <input
-              type="email"
-              name="email"
-              className="form-control"
-              placeholder="Masukan alamat email"
-              onChange={(e) => handleChange(e)}
-            />
+            <input type="email" name="email" className="form-control" placeholder="Masukan alamat email" onChange={(e) => handleChange(e)} />
           </div>
           <div className="mb-3">
             <label htmlFor="" className="form-label">
               Perusahaan
             </label>
-            <input
-              type="text"
-              name="company"
-              className="form-control"
-              placeholder="Masukan nama perusahaan"
-              onChange={(e) => handleChange(e)}
-            />
+            <input type="text" name="company" className="form-control" placeholder="Masukan nama perusahaan" onChange={(e) => handleChange(e)} />
           </div>
           <div className="mb-3">
             <label htmlFor="" className="form-label">
               Bidang Perusahaan
             </label>
-            <input
-              type="text"
-              name="companyType"
-              className="form-control"
-              placeholder="Bidang perusahaan Anda"
-              onChange={(e) => handleChange(e)}
-            />
+            <input type="text" name="companyType" className="form-control" placeholder="Bidang perusahaan Anda" onChange={(e) => handleChange(e)} />
           </div>
           <div className="mb-3">
             <label htmlFor="" className="form-label">
               No handphone
             </label>
-            <input
-              type="text"
-              name="noTelp"
-              className="form-control"
-              placeholder="Masukan no handphone"
-              onChange={(e) => handleChange(e)}
-            />
+            <input type="text" name="noTelp" className="form-control" placeholder="Masukan no handphone" onChange={(e) => handleChange(e)} />
           </div>
           <div className="mb-3">
             <label htmlFor="" className="form-label">
               Kata Sandi
             </label>
-            <input
-              type="password"
-              name="password"
-              className="form-control"
-              placeholder="Masukan kata sandi"
-              onChange={(e) => handleChange(e)}
-            />
+            <input type="password" name="password" className="form-control" placeholder="Masukan kata sandi" onChange={(e) => handleChange(e)} />
           </div>
           <div className="mb-5">
             <label htmlFor="" className="form-label">
               Konfirmasi kata sandi
             </label>
-            <input
-              type="password"
-              name="confirmPassword"
-              className="form-control"
-              placeholder="Masukan konfirmasi kata sandi"
-              onChange={(e) => handleChange(e)}
-            />
+            <input type="password" name="confirmPassword" className="form-control" placeholder="Masukan konfirmasi kata sandi" onChange={(e) => handleChange(e)} />
           </div>
 
           <button type="submit" className="auth-btn btn btn-primary">
