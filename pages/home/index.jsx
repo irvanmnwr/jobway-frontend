@@ -58,7 +58,11 @@ export default function index(props) {
     // console.log(data.selected + 1);
     await setPage(data.selected + 1);
 
-    router.push(`/home?page=${data.selected + 1}`);
+    router.push(
+      `/home?page=${data.selected + 1}&searchSkill=${
+        props.searchSkill
+      }&searchType=${props.searchType}&filterSkill=${props.filterSkill}`
+    );
   };
 
   const handleProfile = (id) => {
@@ -68,7 +72,7 @@ export default function index(props) {
     setSearchSkill(e.target.value);
     if (e.key == "Enter") {
       Router.push(
-        `/home?page=${props.page}&searchSkill=${e.target.value}&searchType=${props.searchType}&filterSkill=${props.filterSkill}`
+        `/home?page=${props.page}&searchSkill=${props.searchSkill}&searchType=${props.searchType}&filterSkill=${props.filterSkill}`
       );
     }
   };
