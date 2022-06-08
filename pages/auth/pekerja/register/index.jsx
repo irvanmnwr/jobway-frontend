@@ -144,7 +144,7 @@ export default function PekerjaRegister() {
             Anda sudah punya akun?{" "}
             <span>
               {" "}
-              <Link href="./login"> Masuk disini </Link>{" "}
+              <Link href="/login"> Masuk disini </Link>{" "}
             </span>{" "}
           </p>
         </div>

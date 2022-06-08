@@ -5,9 +5,31 @@ import axios from "../../utils/axios";
 import { useSelector } from "react-redux";
 import photo from "../../public/photoProfile.jpg";
 import { useRouter } from "next/router";
-import Editprofilealert from "../../component/Editprofilealert";
+import HireAlert from "component/HireAlert";
 import Navbar from "../../component/Navbar";
 
+//Private Route
+import cookies from "next-cookies";
+export async function getServerSideProps(context) {
+  try {
+    const dataCookie = cookies(context);
+    if (!dataCookie.token) {
+      throw TypeError("Unauthorized");
+    }
+    return {
+      props: {
+        data: dataCookie,
+      },
+    };
+  } catch (error) {
+    return {
+      redirect: {
+        destination: "/auth/pekerja/login",
+        permanent: false,
+      },
+    };
+  }
+}
 export default function Portofolio() {
   const router = useRouter();
   const [showAlert, setShowAlert] = useState(false);
@@ -65,7 +87,7 @@ export default function Portofolio() {
   return (
     <div className={styles.container} style={{ background: " rgba(246, 247, 248, 1)" }}>
       <Navbar />
-      <Editprofilealert setShowAlert={setShowAlert} showAlert={showAlert} />
+      <HireAlert setShowAlert={setShowAlert} showAlert={showAlert} />
       <div className=" container d-xl-flex pt-4 pt-xl-5">
         <div className={`${styles.userProfile} container-xl `}>
           <div className=" d-flex justify-content-center mt-xl-4  mb-xl-2  pt-4 pt-xl-">
