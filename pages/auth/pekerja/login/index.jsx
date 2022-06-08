@@ -40,7 +40,7 @@ export default function PekerjaLogin() {
       await dispatch(getExperienceById(result.data.data.id));
       await dispatch(getPortfolioById(result.data.data.id));
       setTimeout(function () {
-        Router.push("/home");
+        Router.push("/landing");
       }, 3000);
     } catch (error) {
       console.log(error.response);
