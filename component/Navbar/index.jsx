@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import Cookies from "js-cookie";
 import axios from "../../utils/axios";
 import { useSelector } from "react-redux";
 import router from "next/router";
@@ -22,6 +23,8 @@ export default function Navbar() {
   };
   const handleLogout = () => {
     axios.post(`/auth/logout`);
+    Cookies.remove("token");
+    localStorage.clear();
     router.push("/auth/pekerja/login");
   };
   return (
