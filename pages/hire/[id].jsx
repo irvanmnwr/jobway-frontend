@@ -5,11 +5,12 @@ import axios from "../../utils/axios";
 import { useSelector } from "react-redux";
 import photo from "../../public/photoProfile.jpg";
 import { useRouter } from "next/router";
-
+import Editprofilealert from "../../component/Editprofilealert";
 import Navbar from "../../component/Navbar";
 
 export default function Portofolio() {
   const router = useRouter();
+  const [showAlert, setShowAlert] = useState(false);
   const [dataEmployee, setDataEmployee] = useState({});
   const [form, setForm] = useState({});
   const [dataEmployeeId, setDataEmployeeId] = useState({});
@@ -43,17 +44,7 @@ export default function Portofolio() {
   try {
     skills = dataEmployee.skill.split(",");
   } catch (error) {
-    skills = [
-      "python",
-      "laraver",
-      "Golang",
-      "javascript",
-      "php",
-      "html",
-      "c++",
-      "kotlin",
-      "swift",
-    ];
+    skills = ["python", "laraver", "Golang", "javascript", "php", "html", "c++", "kotlin", "swift"];
   }
   const handleSubject = (e) => {
     setForm({ ...form, subject: e.target.value });
@@ -66,36 +57,24 @@ export default function Portofolio() {
       console.log(form);
       const resultMail = await axios.post(`/hiring/${recruiterId}`, form);
       console.log(resultMail);
+      setShowAlert(true);
     } catch (error) {
       console.log(error);
     }
   };
   return (
-    <div
-      className={styles.container}
-      style={{ background: " rgba(246, 247, 248, 1)" }}
-    >
+    <div className={styles.container} style={{ background: " rgba(246, 247, 248, 1)" }}>
       <Navbar />
+      <Editprofilealert setShowAlert={setShowAlert} showAlert={showAlert} />
       <div className=" container d-xl-flex pt-4 pt-xl-5">
         <div className={`${styles.userProfile} container-xl `}>
           <div className=" d-flex justify-content-center mt-xl-4  mb-xl-2  pt-4 pt-xl-">
-            <img
-              style={{ width: "100px" }}
-              src={
-                dataEmployee.image
-                  ? process.env.CLAUDINARY + dataEmployee.image
-                  : photo
-              }
-              alt=""
-            />
+            <img style={{ width: "100px" }} src={dataEmployee.image ? process.env.CLAUDINARY + dataEmployee.image : photo} alt="" />
           </div>
           <div className=" d-flex flex-column">
             <div className={`d-flex flex-column ${styles.detailUser}`}>
               <span className=" fw-bold fs-5 my-3">{dataEmployee.name}</span>
-              <span
-                className=""
-                style={{ fontSize: "14px", lineHeight: "24px" }}
-              >
+              <span className="" style={{ fontSize: "14px", lineHeight: "24px" }}>
                 {dataEmployee.jobDesc}
               </span>
               <span
@@ -158,19 +137,11 @@ export default function Portofolio() {
             </div>
           </div>
         </div>
-        <div
-          className={`mx-xl-4 container h-100 mt-xl-0 mt-3`}
-          style={{ flex: 4 }}
-        >
+        <div className={`mx-xl-4 container h-100 mt-xl-0 mt-3`} style={{ flex: 4 }}>
           <div className={styles.formInput}>
             <div className=" d-flex flex-column mb-4">
-              <span style={{ fontSize: "32px", marginBottom: "16px" }}>
-                Hubungi {dataEmployee.name}
-              </span>
-              <span style={{ fontSize: "18px" }}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-                euismod ipsum et dui rhoncus auctor.
-              </span>
+              <span style={{ fontSize: "32px", marginBottom: "16px" }}>Hubungi {dataEmployee.name}</span>
+              <span style={{ fontSize: "18px" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dui rhoncus auctor.</span>
             </div>
             <div className=" d-flex flex-column mb-3">
               <span style={{ fontSize: "12px" }}>Tujuan tentang pesan ini</span>
@@ -184,12 +155,8 @@ export default function Portofolio() {
                 onChange={handleSubject}
               >
                 <option value=""></option>
-                <option value="Offering to Collaborate">
-                  Offering to Collaborate
-                </option>
-                <option value=">Offering to Join The Company">
-                  Offering to Join The Company
-                </option>
+                <option value="Offering to Collaborate">Offering to Collaborate</option>
+                <option value=">Offering to Join The Company">Offering to Join The Company</option>
               </select>
             </div>
             <div className=" d-flex flex-column mb-3">
