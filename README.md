@@ -173,10 +173,10 @@
 ## **Preview**
 
 <p align="center">
-<img src="https://m.media-amazon.com/images/I/81aoSQMg+LL._AC_SX425_.jpg" width="150px"/>
-<img src="https://m.media-amazon.com/images/I/81aoSQMg+LL._AC_SX425_.jpg" width="150px"/> <br />
-<img src="https://m.media-amazon.com/images/I/81aoSQMg+LL._AC_SX425_.jpg" width="150px"/>
-<img src="https://m.media-amazon.com/images/I/81aoSQMg+LL._AC_SX425_.jpg" width="150px"/>
+<img src="https://res.cloudinary.com/dgfrrs5iz/image/upload/v1654710738/capture%20web/1_u6ytx0.png" width="500px"/>
+<img src="https://res.cloudinary.com/dgfrrs5iz/image/upload/v1654710749/capture%20web/mobile_1_wsiwwl.png" width="500px"/> <br />
+<img src="https://res.cloudinary.com/dgfrrs5iz/image/upload/v1654710748/capture%20web/mobile_sooric.png" width="500px"/>
+<img src="https://m.media-amazon.com/images/I/81aoSQMg+LL._AC_SX425_.jpg" width="500px"/>
 </p>
 
 <br/>
@@ -184,9 +184,7 @@
 
 ## **Deploy**
 
-# **Enjoy your journey with Jobway**
-
-Link deploy : [**JOBWAY**]()
+### **Enjoy your journey with Jobway** >> Link deploy : [**JOBWAY**]()
 
 <br/>
 <hr/>
@@ -199,6 +197,6 @@ Link deploy : [**JOBWAY**]()
 
 | Full-Stack Developer & Team Leader                                                        | Full-Stack Developer                                                                      | Full-Stack Developer                                                                                          | Full-Stack Developer                                                                                             | Back-End Developer                                                                                                                                  | Front-End Developer                                                                       | Front-End Developer                                                                       |
 | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| <img src="https://m.media-amazon.com/images/I/81aoSQMg+LL._AC_SX425_.jpg" width="150px"/> | <img src="https://m.media-amazon.com/images/I/81aoSQMg+LL._AC_SX425_.jpg" width="150px"/> | <img src="https://res.cloudinary.com/dgfrrs5iz/image/upload/v1654680230/team/arin_nugsnz.jpg" width="150px"/> | <img src="https://res.cloudinary.com/dgfrrs5iz/image/upload/v1654682325/team/picture_wcpalr.jpg" width="150px"/> | <img src="https://res.cloudinary.com/dgfrrs5iz/image/upload/v1654680230/team/010a4e2ecc702f12efe06e052c50c000017c280b51_rigjzk.jpg" width="150px"/> | <img src="https://m.media-amazon.com/images/I/81aoSQMg+LL._AC_SX425_.jpg" width="150px"/> | <img src="https://m.media-amazon.com/images/I/81aoSQMg+LL._AC_SX425_.jpg" width="150px"/> |
+| <img src="https://m.media-amazon.com/images/I/81aoSQMg+LL._AC_SX425_.jpg" width="250px"/> | <img src="https://m.media-amazon.com/images/I/81aoSQMg+LL._AC_SX425_.jpg" width="250px"/> | <img src="https://res.cloudinary.com/dgfrrs5iz/image/upload/v1654680230/team/arin_nugsnz.jpg" width="250px"/> | <img src="https://res.cloudinary.com/dgfrrs5iz/image/upload/v1654682325/team/picture_wcpalr.jpg" width="250px"/> | <img src="https://res.cloudinary.com/dgfrrs5iz/image/upload/v1654680230/team/010a4e2ecc702f12efe06e052c50c000017c280b51_rigjzk.jpg" width="250px"/> | <img src="https://m.media-amazon.com/images/I/81aoSQMg+LL._AC_SX425_.jpg" width="250px"/> | <img src="https://m.media-amazon.com/images/I/81aoSQMg+LL._AC_SX425_.jpg" width="250px"/> |
 | [github Maul](https://github.com/mauloli)                                                 | [github Irvan Munawir](https://github.com/irvanmnwr)                                      | [github Arin Iffana](https://github.com/ArinIffana)                                                           | [github Erika Sempana](https://github.com/erikasempana)                                                          | [github Tri Haryo Ibrahim](https://github.com/triharyoibrahim)                                                                                      | [github Rifang Pri Asmara](https://github.com/AsmaraRP)                                   | [github Luthfi Thufail Asiddiqi](https://github.com/luthfidiqi)                           |
 |                                                                                           |                                                                                           |                                                                                                               |                                                                                                                  |                                                                                                                                                     |                                                                                           |                                                                                           |

@@ -97,7 +97,8 @@ a {
   }
 
   .home__pagination {
-    display: none;
+    width: 50%;
+    margin: auto !important;
   }
 
   .home .home__search {
@@ -105,7 +106,8 @@ a {
   }
 
   .home .profile__button {
-    display: none;
+    display: show;
+    padding-left: 38px;
   }
 
   .home .col-md-2 {

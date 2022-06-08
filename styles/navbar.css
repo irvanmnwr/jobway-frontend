@@ -32,3 +32,9 @@
   border: none;
   padding: 0;
 }
+
+@media (max-width: 720px) {
+  .user-btn-nav {
+    padding-left: 0px !important;
+  }
+}
