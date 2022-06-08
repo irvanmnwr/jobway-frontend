@@ -2,7 +2,30 @@ import React, { useEffect, useState } from "react";
 import Layout from "../../../component/Layout/auth";
 import axios from "../../../utils/axios";
 import Router from "next/router";
-import OneTimeActivationCode from "one-time-activation-code";
+
+//Private Route
+import cookies from "next-cookies";
+export async function getServerSideProps(context) {
+  try {
+    const dataCookie = cookies(context);
+    if (dataCookie.token) {
+      throw TypeError("Already authorized");
+    }
+    return {
+      props: {
+        data: dataCookie,
+      },
+    };
+  } catch (error) {
+    return {
+      redirect: {
+        destination: "/landing",
+        permanent: false,
+      },
+    };
+  }
+}
+
 export default function ResetPassword() {
   const generateOTP = (length) => {
     const digits = "0123456789";
@@ -13,23 +36,8 @@ export default function ResetPassword() {
     return OTP;
   };
 
-  const otac = new OneTimeActivationCode({
-    expiresAfter: 3600,
-    attemptsChance: 2,
-    encodeCode: false,
-  });
-
-  otac.set("maulanasholihin", "123456");
-  const handleOtp = async () => {
-    try {
-      const result = await otac.isValid("maulanasholihin", "123456");
-      console.log(result);
-    } catch (error) {
-      console.log(error.response);
-    }
-  };
-
-  const [data, setData] = useState({ email: "", pin: generateOTP(6) });
+  const generatePin = generateOTP(6);
+  const [data, setData] = useState({ email: "", pin: generatePin });
   const [alert, setAlert] = useState({
     show: false,
     text: "",
@@ -109,9 +117,6 @@ export default function ResetPassword() {
             className="auth-btn btn btn-primary"
           >
             Send password reset email
-          </button>
-          <button type="button" onClick={() => handleOtp()}>
-            test
           </button>
         </form>
       </Layout>
