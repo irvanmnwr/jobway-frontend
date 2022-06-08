@@ -58,6 +58,8 @@
 
 - [**Preview**](#preview)
 
+- [**Deploy**](#deploy)
+
 - [**Team**](#team)
 
 <br/>
@@ -180,14 +182,23 @@
 <br/>
 <hr/>
 
+## **Deploy**
+
+# **Enjoy your journey with Jobway**
+
+Link deploy : [**JOBWAY**]()
+
+<br/>
+<hr/>
+
 ## **Team**
 
 **All Members of Default Team**
 
 <br/>
 
-| Full-Stack Developer & Team Leader                                                        | Full-Stack Developer                                                                      | Full-Stack Developer                                                                      | Full-Stack Developer                                                                      | Back-End Developer                                                                        | Front-End Developer                                                                       | Front-End Developer                                                                       |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| <img src="https://m.media-amazon.com/images/I/81aoSQMg+LL._AC_SX425_.jpg" width="150px"/> | <img src="https://m.media-amazon.com/images/I/81aoSQMg+LL._AC_SX425_.jpg" width="150px"/> | <img src="https://m.media-amazon.com/images/I/81aoSQMg+LL._AC_SX425_.jpg" width="150px"/> | <img src="https://m.media-amazon.com/images/I/81aoSQMg+LL._AC_SX425_.jpg" width="150px"/> | <img src="https://m.media-amazon.com/images/I/81aoSQMg+LL._AC_SX425_.jpg" width="150px"/> | <img src="https://m.media-amazon.com/images/I/81aoSQMg+LL._AC_SX425_.jpg" width="150px"/> | <img src="https://m.media-amazon.com/images/I/81aoSQMg+LL._AC_SX425_.jpg" width="150px"/> |
-| [github Maul](https://github.com/mauloli)                                                 | [github Irvan Munawir](https://github.com/irvanmnwr)                                      | [github Arin Iffana](https://github.com/ArinIffana)                                       | [github Erika Sempana](https://github.com/erikasempana)                                   | [github Tri Haryo Ibrahim](https://github.com/triharyoibrahim)                            | [github Rifang Pri Asmara](https://github.com/AsmaraRP)                                   | [github Luthfi Thufail Asiddiqi](https://github.com/luthfidiqi)                           |
-|                                                                                           |                                                                                           |                                                                                           |                                                                                           |                                                                                           |                                                                                           |                                                                                           |
+| Full-Stack Developer & Team Leader                                                        | Full-Stack Developer                                                                      | Full-Stack Developer                                                                                          | Full-Stack Developer                                                                                             | Back-End Developer                                                                                                                                  | Front-End Developer                                                                       | Front-End Developer                                                                       |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| <img src="https://m.media-amazon.com/images/I/81aoSQMg+LL._AC_SX425_.jpg" width="150px"/> | <img src="https://m.media-amazon.com/images/I/81aoSQMg+LL._AC_SX425_.jpg" width="150px"/> | <img src="https://res.cloudinary.com/dgfrrs5iz/image/upload/v1654680230/team/arin_nugsnz.jpg" width="150px"/> | <img src="https://res.cloudinary.com/dgfrrs5iz/image/upload/v1654682325/team/picture_wcpalr.jpg" width="150px"/> | <img src="https://res.cloudinary.com/dgfrrs5iz/image/upload/v1654680230/team/010a4e2ecc702f12efe06e052c50c000017c280b51_rigjzk.jpg" width="150px"/> | <img src="https://m.media-amazon.com/images/I/81aoSQMg+LL._AC_SX425_.jpg" width="150px"/> | <img src="https://m.media-amazon.com/images/I/81aoSQMg+LL._AC_SX425_.jpg" width="150px"/> |
+| [github Maul](https://github.com/mauloli)                                                 | [github Irvan Munawir](https://github.com/irvanmnwr)                                      | [github Arin Iffana](https://github.com/ArinIffana)                                                           | [github Erika Sempana](https://github.com/erikasempana)                                                          | [github Tri Haryo Ibrahim](https://github.com/triharyoibrahim)                                                                                      | [github Rifang Pri Asmara](https://github.com/AsmaraRP)                                   | [github Luthfi Thufail Asiddiqi](https://github.com/luthfidiqi)                           |
+|                                                                                           |                                                                                           |                                                                                                               |                                                                                                                  |                                                                                                                                                     |                                                                                           |                                                                                           |
