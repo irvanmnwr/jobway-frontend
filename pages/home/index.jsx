@@ -16,10 +16,11 @@ export async function getServerSideProps(context) {
     console.log(params);
     const page = !params?.page ? 1 : params.page;
     const searchSkill = !params?.searchSkill ? "" : params.searchSkill;
-    const searchType = !params.searchType ? "" : params.searchType;
+    const searchType = !params?.searchType ? "" : params.searchType;
+    const filterSkill = !params?.filterSkill ? "" : params.filterSkill;
 
     const result = await axiosServer.get(
-      `user?page=${page}&limit=5&searchSkill=${searchSkill}&searchType=${searchType}`
+      `user?page=${page}&limit=5&searchSkill=${searchSkill}&searchType=${searchType}&filterSkill=${filterSkill}`
       // {
       //   headers: {
       //     Authorization: `Bearer ${dataCookies.token}`,
@@ -34,6 +35,7 @@ export async function getServerSideProps(context) {
         page: page,
         searchSkill: searchSkill,
         searchType: searchType,
+        filterSkill: filterSkill,
       },
     };
   } catch (error) {
@@ -50,7 +52,6 @@ export default function index(props) {
   const [page, setPage] = useState(props.page);
   const [searchSkill, setSearchSkill] = useState("");
   const [sortType, setSortType] = useState("");
-  const path = `/home?page=${props.page}&searchSkill=${props.searchSkill}&searchType=${props.searchType}`;
   const handlePagination = async (data) => {
     // console.log(data.selected + 1);
     await setPage(data.selected + 1);
@@ -65,7 +66,20 @@ export default function index(props) {
     setSearchSkill(e.target.value);
     if (e.key == "Enter") {
       Router.push(
-        `/home?page=${props.page}&searchSkill=${e.target.value}&searchType=${props.searchType}`
+        `/home?page=${props.page}&searchSkill=${e.target.value}&searchType=${props.searchType}&filterSkill=${props.filterSkill}`
+      );
+    }
+  };
+  const handleCheck = (e) => {
+    const { checked } = e.target;
+    console.log(checked);
+    if (checked) {
+      Router.push(
+        `/home?page=${props.page}&searchSkill=${props.searchSkill}&searchType=${props.searchType}&filterSkill=active`
+      );
+    } else {
+      Router.push(
+        `/home?page=${props.page}&searchSkill=${props.searchSkill}&searchType=${props.searchType}&filterSkill=notActive`
       );
     }
   };
@@ -96,7 +110,7 @@ export default function index(props) {
                           class="form-check-input"
                           type="checkbox"
                           id="flexSwitchCheckChecked"
-                          // checked
+                          onChange={(e) => handleCheck(e)}
                         />
                       </div>
                     </div>
@@ -108,7 +122,7 @@ export default function index(props) {
                     aria-label="Default select example"
                     onChange={(e) =>
                       Router.push(
-                        `/home?page=${props.page}&searchSkill=${props.searchSkill}&searchType=${e.target.value}`
+                        `/home?page=${props.page}&searchSkill=${props.searchSkill}&searchType=${e.target.value}&filterSkill=${props.filterSkill}`
                       )
                     }
                   >
@@ -129,7 +143,7 @@ export default function index(props) {
                     className="btn btn-primary col-12"
                     onClick={() =>
                       Router.push(
-                        `/home?page=${props.page}&searchSkill=${searchSkill}&searchType=${props.searchType}`
+                        `/home?page=${props.page}&searchSkill=${searchSkill}&searchType=${props.searchType}&filterSkill=${props.filterSkill}`
                       )
                     }
                   >
