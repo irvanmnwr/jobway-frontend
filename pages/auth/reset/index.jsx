@@ -2,6 +2,30 @@ import React, { useEffect, useState } from "react";
 import Layout from "../../../component/Layout/auth";
 import axios from "../../../utils/axios";
 import Router from "next/router";
+
+//Private Route
+import cookies from "next-cookies";
+export async function getServerSideProps(context) {
+  try {
+    const dataCookie = cookies(context);
+    if (dataCookie.token) {
+      throw TypeError("Already authorized");
+    }
+    return {
+      props: {
+        data: dataCookie,
+      },
+    };
+  } catch (error) {
+    return {
+      redirect: {
+        destination: "/landing",
+        permanent: false,
+      },
+    };
+  }
+}
+
 export default function ResetPassword() {
   const [data, setData] = useState({ email: "" });
   const [alert, setAlert] = useState({
@@ -49,39 +73,19 @@ export default function ResetPassword() {
     <div>
       <Layout title="Jobway | Reset Password">
         <h2>Reset Password</h2>
-        <p className="mb-4">
-          Enter your user account's verified email address and we will send you
-          a password reset link.
-        </p>
+        <p className="mb-4">Enter your user account's verified email address and we will send you a password reset link.</p>
         <form className="auth-form">
-          <div
-            className={`alert ${
-              alert.staus == 400 || alert.staus == 404
-                ? "alert-danger"
-                : "alert-primary"
-            }   text-center ${alert.show ? "fadeIn" : "fadeOut"}`}
-            role="alert"
-          >
+          <div className={`alert ${alert.staus == 400 || alert.staus == 404 ? "alert-danger" : "alert-primary"}   text-center ${alert.show ? "fadeIn" : "fadeOut"}`} role="alert">
             {alert.text}
           </div>
           <div className="mb-5">
             <label htmlFor="" className="form-label">
               Email
             </label>
-            <input
-              type="email"
-              name="email"
-              className="form-control"
-              placeholder="Masukan alamat email"
-              onChange={(e) => handleChange(e)}
-            />
+            <input type="email" name="email" className="form-control" placeholder="Masukan alamat email" onChange={(e) => handleChange(e)} />
           </div>
 
-          <button
-            onClick={(e) => handleSubmit(e)}
-            type="button"
-            className="auth-btn btn btn-primary"
-          >
+          <button onClick={(e) => handleSubmit(e)} type="button" className="auth-btn btn btn-primary">
             Send password reset email
           </button>
         </form>
