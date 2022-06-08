@@ -1,28 +1,50 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../../../component/Layout/auth";
 import axios from "../../../utils/axios";
+import Router from "next/router";
 export default function ResetPassword() {
   const [data, setData] = useState({ email: "" });
-  //   const [alert, setAlert] = useState({
-  //     show: true,
-  //     text: "",
-  //   });
+  const [alert, setAlert] = useState({
+    show: false,
+    text: "",
+    staus: 0,
+  });
   const handleSubmit = async () => {
     try {
       const result = await axios.post(`/auth/confirmPassword`, data);
 
-      alert("Success!! Please Check your Email");
+      setAlert({
+        ...alert,
+        show: true,
+        staus: 200,
+        text: "Success! please check your email!",
+      });
+      setTimeout(function () {
+        Router.push("/login");
+      }, 4000);
       console.log(result);
     } catch (error) {
       console.log(error.response);
 
-      alert(error.response.data.msg);
+      setAlert({
+        ...alert,
+        show: true,
+        text: error.response.data.msg,
+        staus: error.response.data.status,
+      });
     }
   };
   const handleChange = (e) => {
     setData({ ...data, email: e.target.value });
   };
-  console.log(data);
+
+  useEffect(() => {
+    if (alert.show) {
+      setTimeout(function () {
+        setAlert({ ...alert, show: false });
+      }, 4000);
+    }
+  }, [alert]);
   return (
     <div>
       <Layout title="Jobway | Reset Password">
@@ -32,6 +54,16 @@ export default function ResetPassword() {
           a password reset link.
         </p>
         <form className="auth-form">
+          <div
+            className={`alert ${
+              alert.staus == 400 || alert.staus == 404
+                ? "alert-danger"
+                : "alert-primary"
+            }   text-center ${alert.show ? "fadeIn" : "fadeOut"}`}
+            role="alert"
+          >
+            {alert.text}
+          </div>
           <div className="mb-5">
             <label htmlFor="" className="form-label">
               Email
