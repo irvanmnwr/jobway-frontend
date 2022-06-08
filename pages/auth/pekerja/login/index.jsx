@@ -63,22 +63,44 @@ export default function PekerjaLogin() {
     <div>
       <Layout title="Jobway | Pekerja Login">
         <h2>Halo, Pewpeople</h2>
-        <p className="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dui rhoncus auctor.</p>
+        <p className="mb-4">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod
+          ipsum et dui rhoncus auctor.
+        </p>
         <form className="auth-form" onSubmit={hanldeSubmit}>
           <div className="mb-3">
-            <div className={`alert ${alert.staus == 400 || alert.staus == 404 ? "alert-danger" : "alert-primary"}   text-center ${alert.show ? "fadeIn" : "fadeOut"}`} role="alert">
+            <div
+              className={`alert ${
+                alert.staus == 400 || alert.staus == 404
+                  ? "alert-danger"
+                  : "alert-primary"
+              }   text-center ${alert.show ? "fadeIn" : "fadeOut"}`}
+              role="alert"
+            >
               {alert.text}
             </div>
             <label htmlFor="" className="form-label">
               Email
             </label>
-            <input type="email" name="email" className="form-control" placeholder="Masukan alamat email" onChange={(e) => handleChange(e)} />
+            <input
+              type="email"
+              name="email"
+              className="form-control"
+              placeholder="Masukan alamat email"
+              onChange={(e) => handleChange(e)}
+            />
           </div>
           <div className="mb-3">
             <label htmlFor="" className="form-label">
               Kata Sandi
             </label>
-            <input type="password" name="password" className="form-control" placeholder="Masukan kata sandi" onChange={(e) => handleChange(e)} />
+            <input
+              type="password"
+              name="password"
+              className="form-control"
+              placeholder="Masukan kata sandi"
+              onChange={(e) => handleChange(e)}
+            />
           </div>
 
           <div className="forgot-pass d-flex justify-content-end mb-5">
@@ -95,7 +117,7 @@ export default function PekerjaLogin() {
             Anda belum punya akun?{" "}
             <span>
               {" "}
-              <Link href="./register"> Daftar disini </Link>{" "}
+              <Link href="../option/register"> Daftar disini </Link>{" "}
             </span>{" "}
           </p>
         </div>

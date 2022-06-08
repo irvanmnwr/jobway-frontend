@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../../../../component/Layout/auth";
 import Link from "next/link";
 import axios from "../../../../utils/axios";
-
+import Router from "next/router";
 export default function PekerjaRegister() {
   const [data, setData] = useState({
     name: "",
@@ -11,6 +11,11 @@ export default function PekerjaRegister() {
     noTelp: "",
     password: "",
     confirmPassword: "",
+  });
+  const [alert, setAlert] = useState({
+    show: false,
+    text: "",
+    staus: 0,
   });
   const handleChange = (e) => {
     const { value, name } = e.target;
@@ -22,11 +27,32 @@ export default function PekerjaRegister() {
     try {
       const result = await axios.post(`/auth/register`, data);
       console.log(result);
-      alert("succes register please check your email");
+      setAlert({
+        ...alert,
+        show: true,
+        staus: 200,
+        text: "Register Success! please check your email!",
+      });
+      setTimeout(function () {
+        Router.push("/login");
+      }, 3000);
     } catch (error) {
       console.log(error.response);
+      setAlert({
+        ...alert,
+        show: true,
+        text: error.response.data.msg,
+        staus: error.response.data.status,
+      });
     }
   };
+  useEffect(() => {
+    if (alert.show) {
+      setTimeout(function () {
+        setAlert({ ...alert, show: false });
+      }, 4000);
+    }
+  }, [alert]);
   console.log(data);
   return (
     <div>
@@ -37,6 +63,16 @@ export default function PekerjaRegister() {
           ipsum et dui rhoncus auctor.
         </p>
         <form className="auth-form" onSubmit={handleSubmit}>
+          <div
+            className={`alert ${
+              alert.staus == 400 || alert.staus == 404
+                ? "alert-danger"
+                : "alert-primary"
+            }   text-center ${alert.show ? "fadeIn" : "fadeOut"}`}
+            role="alert"
+          >
+            {alert.text}
+          </div>
           <div className="mb-3">
             <label htmlFor="" className="form-label">
               Nama

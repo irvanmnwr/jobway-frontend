@@ -90,7 +90,9 @@ export default function Landing() {
                 <div className="content-left pe-5">
                     <h1>Talenta terbaik negri untuk perubahan revolusi 4.0</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dui rhoncus auctor.</p>
-                    <button className="landing-purple-btn btn btn-primary">Mulai Dari Sekarang</button>
+                    <Link href="../auth/option/register">
+                        <button className="landing-purple-btn btn btn-primary">Mulai Dari Sekarang</button>
+                    </Link>
                 </div>
                 <div className="content-right ps-5">
                     <img src="../../images/landing/header.png" alt="header" />
@@ -208,7 +210,9 @@ export default function Landing() {
         <div className="call-action">
             <div className="call-action-content container">
                 <h2>Lorem ipsum dolor sit amet</h2>
-                <button className="landing-white-btn btn btn-primary">Mulai Dari Sekarang</button>
+                <Link href="../auth/option/register">
+                    <button className="landing-white-btn btn btn-primary">Mulai Dari Sekarang</button>
+                </Link>
             </div>
         </div>
 

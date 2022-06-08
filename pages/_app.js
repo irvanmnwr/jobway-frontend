@@ -9,6 +9,7 @@ import "../styles/auth.css";
 import "../styles/landing.css";
 import "../styles/navbar.css";
 import { useEffect } from "react";
+import "../styles/all.css";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
