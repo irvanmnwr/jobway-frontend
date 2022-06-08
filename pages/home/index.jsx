@@ -90,9 +90,16 @@ export default function index(props) {
                       onChange={(e) => handleChange(e)}
                       onKeyDown={(e) => handleChange(e)}
                     />
-                    <span className="input-group-text" id="basic-addon2">
-                      <SearchIcon />
-                    </span>
+                    <div className="input-group-text" id="basic-addon2">
+                      <div class="form-check form-switch">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="flexSwitchCheckChecked"
+                          // checked
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div className="col-2">
