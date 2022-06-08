@@ -7,6 +7,29 @@ import { useDispatch } from "react-redux";
 import Cookies from "js-cookie";
 import { getUserById } from "../../../../store/actions/profile";
 
+//Private Route
+import cookies from "next-cookies";
+export async function getServerSideProps(context) {
+  try {
+    const dataCookie = cookies(context);
+    if (dataCookie.token) {
+      throw TypeError("Already authorized");
+    }
+    return {
+      props: {
+        data: dataCookie,
+      },
+    };
+  } catch (error) {
+    return {
+      redirect: {
+        destination: "/landing",
+        permanent: false,
+      },
+    };
+  }
+}
+
 export default function PerekrutLogin() {
   const dispatch = useDispatch();
   const [data, setData] = useState({
