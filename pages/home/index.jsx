@@ -8,8 +8,10 @@ import SearchIcon from "../../component/search-icon/index";
 
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
+import { useSelector } from "react-redux";
 
 export async function getServerSideProps(context) {
+  console.log(context);
   try {
     // const dataCookies = cookies(context);
     const params = context.query;

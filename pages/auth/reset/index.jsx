@@ -2,8 +2,34 @@ import React, { useEffect, useState } from "react";
 import Layout from "../../../component/Layout/auth";
 import axios from "../../../utils/axios";
 import Router from "next/router";
+import OneTimeActivationCode from "one-time-activation-code";
 export default function ResetPassword() {
-  const [data, setData] = useState({ email: "" });
+  const generateOTP = (length) => {
+    const digits = "0123456789";
+    let OTP = "";
+    for (let i = 0; i < length; i++) {
+      OTP += digits[Math.floor(Math.random() * 10)];
+    }
+    return OTP;
+  };
+
+  const otac = new OneTimeActivationCode({
+    expiresAfter: 3600,
+    attemptsChance: 2,
+    encodeCode: false,
+  });
+
+  otac.set("maulanasholihin", "123456");
+  const handleOtp = async () => {
+    try {
+      const result = await otac.isValid("maulanasholihin", "123456");
+      console.log(result);
+    } catch (error) {
+      console.log(error.response);
+    }
+  };
+
+  const [data, setData] = useState({ email: "", pin: generateOTP(6) });
   const [alert, setAlert] = useState({
     show: false,
     text: "",
@@ -83,6 +109,9 @@ export default function ResetPassword() {
             className="auth-btn btn btn-primary"
           >
             Send password reset email
+          </button>
+          <button type="button" onClick={() => handleOtp()}>
+            test
           </button>
         </form>
       </Layout>
