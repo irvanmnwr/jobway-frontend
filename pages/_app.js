@@ -8,8 +8,12 @@ import "../styles/responsiveProfile.css";
 import "../styles/auth.css";
 import "../styles/landing.css";
 import "../styles/navbar.css";
+import { useEffect } from "react";
 
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    import("bootstrap/dist/js/bootstrap");
+  }, []);
   return (
     <Provider store={Store.store}>
       <PersistGate loading={null} persistor={Store.persistor}>
