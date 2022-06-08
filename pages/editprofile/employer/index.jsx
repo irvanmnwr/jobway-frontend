@@ -26,11 +26,10 @@ export default function Employer() {
   const [showImage, setShowImage] = useState(false);
   const [idExperience, setIdExperience] = useState(0);
   const [idPortfolio, setIdPortfolio] = useState(0);
-  const [image, setImage] = useState({});
+  const [image, setImage] = useState(null);
   const [skill, setSkill] = useState();
   const [workform, setWorkform] = useState({ companyName: "", jobDesc: "", entryDate: "", outDate: "", description: "" });
   const [portfolioform, setPortfolioform] = useState({ applicationName: "", repositoryName: "" });
-  const [changePass, setChangePass] = useState(false);
   const [files, setFiles] = useState([{ preview: upload }]);
   const { getRootProps, getInputProps } = useDropzone({
     maxFiles: 1,
@@ -43,6 +42,7 @@ export default function Employer() {
           })
         )
       );
+      setImage(null);
     },
   });
   const getDataByUserId = async () => {
@@ -65,6 +65,9 @@ export default function Employer() {
     } catch (error) {
       console.log(error);
     }
+  };
+  const handleBack = () => {
+    router.push("/home");
   };
   const dataUser = useSelector((state) => state.profile.data[0]);
   const dataExperience = useSelector((state) => state.experience.data);
@@ -195,7 +198,7 @@ export default function Employer() {
         setWorkform({ companyName: "", jobDesc: "", entryDate: "", outDate: "", description: "" });
       } else {
         setIdExperience(item.id);
-        setWorkform({ companyName: item.companyName, jobDesc: item.jobDesc, entryDate: item.entryDate, outDate: item.outDate, description: item.description });
+        setWorkform({ companyName: item.companyName, jobDesc: item.jobDesc, entryDate: item.entryDate.split("T")[0], outDate: item.outDate.split("T")[0], description: item.description });
       }
     } catch (error) {
       console.log(error);
@@ -217,7 +220,11 @@ export default function Employer() {
         throw TypeError("data is deny");
       }
       const formPortfolio = { ...portfolioform, image: files[0] };
-      await dispatch(createPortfolio(formPortfolio));
+      const formData = new FormData();
+      for (const data in formPortfolio) {
+        formData.append(data, formPortfolio[data]);
+      }
+      await dispatch(createPortfolio(formData));
       await getPortfolioByUserId();
       setPortfolioform({ applicationName: "", repositoryName: "" });
       setFiles([{ preview: upload }]);
@@ -229,13 +236,32 @@ export default function Employer() {
   const handleUpdatePortfolioForm = async (e) => {
     try {
       e.preventDefault();
-      const formPortfolio = { ...portfolioform, image: files[0] };
-      await dispatch(updatePortfolio(idPortfolio, formPortfolio));
-      await getPortfolioByUserId();
-      setIdPortfolio(0);
-      setPortfolioform({ applicationName: "", repositoryName: "" });
-      setFiles([{ preview: upload }]);
-      setShowAlert(true);
+      if (files[0].preview === upload) {
+        const formPortfolio = { ...portfolioform };
+        const formData = new FormData();
+        for (const data in formPortfolio) {
+          formData.append(data, formPortfolio[data]);
+        }
+        await dispatch(updatePortfolio(idPortfolio, formData));
+        await getPortfolioByUserId();
+        setIdPortfolio(0);
+        setPortfolioform({ applicationName: "", repositoryName: "" });
+        setImage(null);
+        setShowAlert(true);
+      } else {
+        const formPortfolio = { ...portfolioform, image: files[0] };
+        const formData = new FormData();
+        for (const data in formPortfolio) {
+          formData.append(data, formPortfolio[data]);
+        }
+        await dispatch(updatePortfolio(idPortfolio, formData));
+        await getPortfolioByUserId();
+        setIdPortfolio(0);
+        setPortfolioform({ applicationName: "", repositoryName: "" });
+        setFiles([{ preview: upload }]);
+        setImage(null);
+        setShowAlert(true);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -256,8 +282,10 @@ export default function Employer() {
       if (idPortfolio === item.id) {
         setIdPortfolio(0);
         setPortfolioform({ applicationName: "", repositoryName: "" });
+        setImage(null);
       } else {
         setPortfolioform({ applicationName: item.applicationName, repositoryName: item.repositoryName });
+        setImage(item.image);
         setIdPortfolio(item.id);
       }
     } catch (error) {
@@ -298,7 +326,9 @@ export default function Employer() {
                 <button className="employer__buttonCardProfile" onClick={() => setShowChangePassword(true)}>
                   Ubah Password
                 </button>
-                <button className="employer__buttonCardProfile">Kembali</button>
+                <button className="employer__buttonCardProfile" onClick={handleBack}>
+                  Kembali
+                </button>
               </div>
 
               <div className="col-8">
@@ -472,7 +502,7 @@ export default function Employer() {
                       <h1 className="employer__labelForm">Upload Gambar</h1>
                       <div className="employer__uploadImagePorto" {...getRootProps()}>
                         <input {...getInputProps()} />
-                        <Image src={files[0].preview} alt="portfolio image" width={120} height={70} />
+                        <Image src={image ? process.env.CLAUDINARY + image : files[0].preview === upload ? upload : files[0].preview} alt="portfolio image" width={120} height={70} />
                         <p className="employer__textUpload1">Drag & Drop untuk Upload Gambar Aplikasi Mobile</p>
                         <p className="employer__textUpload2">Atau cari untuk mengupload file dari direktorimu.</p>
                         <Image src={uploadFiles} width={100} height={22} />

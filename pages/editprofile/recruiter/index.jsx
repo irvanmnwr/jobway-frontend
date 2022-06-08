@@ -35,7 +35,7 @@ export default function Recruiter() {
     }
   };
   const handleBack = () => {
-    router.push("/profile/recruiterPage");
+    router.push("/profile/recruiter");
   };
   const handleChangeForm = (e) => {
     e.preventDefault();
@@ -112,7 +112,7 @@ export default function Recruiter() {
                     </div>
                     <div className="recruiter__setForm">
                       <h1 className="recruiter__labelForm">Email</h1>
-                      <input type="email" value={form.email} placeholder="Masukan Email" className="recruiter__inputForm" name="email" onChange={handleChangeForm} />
+                      <input type="email" value={form.email} placeholder="Masukan Email" className="recruiter__email" name="email" onChange={handleChangeForm} disabled />
                     </div>
                     <div className="recruiter__setForm">
                       <h1 className="recruiter__labelForm">Instagram</h1>
