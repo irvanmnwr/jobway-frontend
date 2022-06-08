@@ -21,7 +21,7 @@ const nextConfig = {
         destination: "/auth/pekerja/register",
       },
       {
-        source: "/pekerja-login",
+        source: "/login",
         destination: "/auth/pekerja/login",
       },
       {

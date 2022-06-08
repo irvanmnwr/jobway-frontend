@@ -73,6 +73,7 @@ export default function index(props) {
   return (
     <>
       <Navbar />
+
       <div className="bg-light home">
         <div className="container">
           <div className="card home__search" style={{ margin: "30px 0px" }}>
