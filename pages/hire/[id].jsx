@@ -8,6 +8,28 @@ import { useRouter } from "next/router";
 import HireAlert from "component/HireAlert";
 import Navbar from "../../component/Navbar";
 
+//Private Route
+import cookies from "next-cookies";
+export async function getServerSideProps(context) {
+  try {
+    const dataCookie = cookies(context);
+    if (!dataCookie.token) {
+      throw TypeError("Unauthorized");
+    }
+    return {
+      props: {
+        data: dataCookie,
+      },
+    };
+  } catch (error) {
+    return {
+      redirect: {
+        destination: "/auth/pekerja/login",
+        permanent: false,
+      },
+    };
+  }
+}
 export default function Portofolio() {
   const router = useRouter();
   const [showAlert, setShowAlert] = useState(false);

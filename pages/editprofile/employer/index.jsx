@@ -18,6 +18,35 @@ import { getPortfolioById, updatePortfolio, deletePortfolio, createPortfolio } f
 import { getExperienceById, updateExperience, createExperience, deleteExperience } from "../../../store/actions/experience";
 import Navbar from "../../../component/Navbar";
 
+//Private Route
+import cookies from "next-cookies";
+import jwt_decode from "jwt-decode";
+export async function getServerSideProps(context) {
+  try {
+    const dataCookie = cookies(context);
+    const resultToken = jwt_decode(dataCookie.token);
+    if (!dataCookie.token) {
+      throw TypeError("Unauthorized");
+    }
+    if (resultToken.role === "recruiter") {
+      throw TypeError("deny");
+    }
+
+    return {
+      props: {
+        data: dataCookie,
+      },
+    };
+  } catch (error) {
+    return {
+      redirect: {
+        destination: "/auth/pekerja/login",
+        permanent: false,
+      },
+    };
+  }
+}
+
 export default function Employer() {
   const dispatch = useDispatch();
   const router = useRouter();
