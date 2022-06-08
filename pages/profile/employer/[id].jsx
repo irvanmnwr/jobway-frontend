@@ -5,7 +5,12 @@ import axios from "../../../utils/axios";
 import axiosServer from "../../../utils/axiosServer";
 import Router from "next/router";
 import cookies from "next-cookies";
-import { IoMailOutline, IoLogoInstagram, IoLogoGithub, IoLogoGitlab } from "react-icons/io5";
+import {
+  IoMailOutline,
+  IoLogoInstagram,
+  IoLogoGithub,
+  IoLogoGitlab,
+} from "react-icons/io5";
 import { useSelector } from "react-redux";
 
 import Navbar from "../../../component/Navbar";
@@ -51,7 +56,7 @@ export default function Portofolio(props) {
   const role = useSelector((state) => state.profile.data[0].role);
   console.log(role);
   const user = props.data;
-  const skills = user.skill.split(",");
+  const skills = user.skill == null ? [] : user.skill.split(",");
   const getExperience = async () => {
     try {
       const result = await axios.get(`workexperience?id=${user.id}`);
@@ -63,7 +68,14 @@ export default function Portofolio(props) {
   };
 
   const getUserById = async () => {};
-  const portoWeb = ["Remainder app", "Social media app", "Project management web", "Remainder app", "Social media app", "Project management web"];
+  const portoWeb = [
+    "Remainder app",
+    "Social media app",
+    "Project management web",
+    "Remainder app",
+    "Social media app",
+    "Project management web",
+  ];
   const handleMenu = (e) => {
     console.log(e);
     if (e === "portofolio") {
@@ -89,12 +101,23 @@ export default function Portofolio(props) {
           <div className={styles.gradient}></div>
           <div className={`${styles.userProfile} container-xl `}>
             <div className=" d-flex justify-content-center mt-xl-4  mb-xl-2  pt-4 pt-xl-">
-              <img style={{ width: "150px", height: "150px", borderRadius: "50%" }} src={user.image !== null ? cloudinaryImg + user.image : "../../user1.png"} alt="" />
+              <img
+                style={{ width: "150px", height: "150px", borderRadius: "50%" }}
+                src={
+                  user.image !== null
+                    ? cloudinaryImg + user.image
+                    : "../../user1.png"
+                }
+                alt=""
+              />
             </div>
             <div className=" d-flex flex-column">
               <div className={`d-flex flex-column ${styles.detailUser}`}>
                 <span className=" fw-bold fs-5 my-3">{user.name}</span>
-                <span className="" style={{ fontSize: "14px", lineHeight: "24px" }}>
+                <span
+                  className=""
+                  style={{ fontSize: "14px", lineHeight: "24px" }}
+                >
                   {user.jobDesc}
                 </span>
                 <span
@@ -141,7 +164,10 @@ export default function Portofolio(props) {
                 ""
               ) : (
                 <div className=" mb-3">
-                  <button className={styles.buttonHire} onClick={() => Router.push(`/hire/${user.id}`)}>
+                  <button
+                    className={styles.buttonHire}
+                    onClick={() => Router.push(`/hire/${user.id}`)}
+                  >
                     Hire
                   </button>
                 </div>
@@ -185,19 +211,35 @@ export default function Portofolio(props) {
               </div>
             </div>
           </div>
-          <div className={`mx-xl-4 container h-100 mt-xl-0 mt-3`} style={{ flex: 4 }}>
+          <div
+            className={`mx-xl-4 container h-100 mt-xl-0 mt-3`}
+            style={{ flex: 4 }}
+          >
             <div className={styles.userPorto}>
               <div className={`pt-xl-3 container ${styles.portoMenu}`}>
-                <span className={menuPorto ? styles.menuActive : styles.notActive} style={{ cursor: "pointer" }} onClick={() => handleMenu("portofolio")}>
+                <span
+                  className={menuPorto ? styles.menuActive : styles.notActive}
+                  style={{ cursor: "pointer" }}
+                  onClick={() => handleMenu("portofolio")}
+                >
                   Portofolio
                 </span>
-                <span className={menuPengalaman ? styles.menuActive : styles.notActive} style={{ cursor: "pointer" }} onClick={() => handleMenu("pengalaman")}>
+                <span
+                  className={
+                    menuPengalaman ? styles.menuActive : styles.notActive
+                  }
+                  style={{ cursor: "pointer" }}
+                  onClick={() => handleMenu("pengalaman")}
+                >
                   Pengalaman Kerja
                 </span>
               </div>
               <div className={` mt-3 ${menuPorto ? "" : "d-none"} `}>
                 {portofolio.map((item, index) => (
-                  <div key={index} className={`d-inline-block flex-column text-center mx-3 my-3 ${styles.portoMain}`}>
+                  <div
+                    key={index}
+                    className={`d-inline-block flex-column text-center mx-3 my-3 ${styles.portoMain}`}
+                  >
                     <img
                       className=" d-block mb-3 m-auto"
                       style={{
@@ -211,17 +253,31 @@ export default function Portofolio(props) {
                   </div>
                 ))}
               </div>
-              <div className={`container d-flex flex-column w-100 ${menuPengalaman ? "" : "d-none"}`}>
+              <div
+                className={`container d-flex flex-column w-100 ${
+                  menuPengalaman ? "" : "d-none"
+                }`}
+              >
                 {experience.map((item, index) => (
                   <div className=" d-flex mt-4" key={index}>
-                    <img style={{ width: "65px", height: "65px" }} src="../../work.png" alt="" />
+                    <img
+                      style={{ width: "65px", height: "65px" }}
+                      src="../../work.png"
+                      alt=""
+                    />
                     <div className=" d-flex flex-column ms-4">
                       <span className="" style={{ fontSize: "20px" }}>
                         {item.jobDesc}
                       </span>
-                      <span style={{ fontSize: "18px" }}>{item.companyName}</span>
+                      <span style={{ fontSize: "18px" }}>
+                        {item.companyName}
+                      </span>
                       <div>
-                        <span style={{ fontSize: "16px", color: "#9EA0A5" }}>{`${item.entryDate.split("T")[0]} - ${item.outDate.split("T")[0]}`}</span>
+                        <span
+                          style={{ fontSize: "16px", color: "#9EA0A5" }}
+                        >{`${item.entryDate.split("T")[0]} - ${
+                          item.outDate.split("T")[0]
+                        }`}</span>
                         <span
                           style={{
                             fontSize: "16px",
@@ -229,18 +285,48 @@ export default function Portofolio(props) {
                             marginLeft: "20px",
                           }}
                         >
-                          {Math.floor((new Date(item.outDate.split("T")) - new Date(item.entryDate.split("T"))) / (1000 * 60 * 60 * 24 * 30)) >= 12
-                            ? Math.floor((new Date(item.outDate.split("T")) - new Date(item.entryDate.split("T"))) / (1000 * 60 * 60 * 24 * 30 * 12)) +
+                          {Math.floor(
+                            (new Date(item.outDate.split("T")) -
+                              new Date(item.entryDate.split("T"))) /
+                              (1000 * 60 * 60 * 24 * 30)
+                          ) >= 12
+                            ? Math.floor(
+                                (new Date(item.outDate.split("T")) -
+                                  new Date(item.entryDate.split("T"))) /
+                                  (1000 * 60 * 60 * 24 * 30 * 12)
+                              ) +
                               " Tahun " +
-                              (Math.floor((new Date(item.outDate.split("T")) - new Date(item.entryDate.split("T"))) / (1000 * 60 * 60 * 24 * 30)) -
-                                Math.floor((new Date(item.outDate.split("T")) - new Date(item.entryDate.split("T"))) / (1000 * 60 * 60 * 24 * 30 * 12)) * 12) +
+                              (Math.floor(
+                                (new Date(item.outDate.split("T")) -
+                                  new Date(item.entryDate.split("T"))) /
+                                  (1000 * 60 * 60 * 24 * 30)
+                              ) -
+                                Math.floor(
+                                  (new Date(item.outDate.split("T")) -
+                                    new Date(item.entryDate.split("T"))) /
+                                    (1000 * 60 * 60 * 24 * 30 * 12)
+                                ) *
+                                  12) +
                               " Bulan "
-                            : Math.floor((new Date(item.outDate.split("T")) - new Date(item.entryDate.split("T"))) / (1000 * 60 * 60 * 24 * 30)) >= 1
-                            ? Math.floor((new Date(item.outDate.split("T")) - new Date(item.entryDate.split("T"))) / (1000 * 60 * 60 * 24 * 30)) + " Bulan "
+                            : Math.floor(
+                                (new Date(item.outDate.split("T")) -
+                                  new Date(item.entryDate.split("T"))) /
+                                  (1000 * 60 * 60 * 24 * 30)
+                              ) >= 1
+                            ? Math.floor(
+                                (new Date(item.outDate.split("T")) -
+                                  new Date(item.entryDate.split("T"))) /
+                                  (1000 * 60 * 60 * 24 * 30)
+                              ) + " Bulan "
                             : "< 1 Bulan"}
                         </span>
                       </div>
-                      <span style={{ fontSize: "14px" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat orci, mollis nec gravida sed, ornare quis urna. Curabitur eu lacus fringilla, vestibulum risus at.</span>
+                      <span style={{ fontSize: "14px" }}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Vestibulum erat orci, mollis nec gravida sed, ornare
+                        quis urna. Curabitur eu lacus fringilla, vestibulum
+                        risus at.
+                      </span>
                     </div>
                   </div>
                 ))}

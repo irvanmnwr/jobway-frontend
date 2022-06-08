@@ -27,7 +27,17 @@ export async function getServerSideProps(context) {
 }
 
 export default function ResetPassword() {
-  const [data, setData] = useState({ email: "" });
+  const generateOTP = (length) => {
+    const digits = "0123456789";
+    let OTP = "";
+    for (let i = 0; i < length; i++) {
+      OTP += digits[Math.floor(Math.random() * 10)];
+    }
+    return OTP;
+  };
+
+  const generatePin = generateOTP(6);
+  const [data, setData] = useState({ email: "", pin: generatePin });
   const [alert, setAlert] = useState({
     show: false,
     text: "",
@@ -73,19 +83,39 @@ export default function ResetPassword() {
     <div>
       <Layout title="Jobway | Reset Password">
         <h2>Reset Password</h2>
-        <p className="mb-4">Enter your user account's verified email address and we will send you a password reset link.</p>
+        <p className="mb-4">
+          Enter your user account's verified email address and we will send you
+          a password reset link.
+        </p>
         <form className="auth-form">
-          <div className={`alert ${alert.staus == 400 || alert.staus == 404 ? "alert-danger" : "alert-primary"}   text-center ${alert.show ? "fadeIn" : "fadeOut"}`} role="alert">
+          <div
+            className={`alert ${
+              alert.staus == 400 || alert.staus == 404
+                ? "alert-danger"
+                : "alert-primary"
+            }   text-center ${alert.show ? "fadeIn" : "fadeOut"}`}
+            role="alert"
+          >
             {alert.text}
           </div>
           <div className="mb-5">
             <label htmlFor="" className="form-label">
               Email
             </label>
-            <input type="email" name="email" className="form-control" placeholder="Masukan alamat email" onChange={(e) => handleChange(e)} />
+            <input
+              type="email"
+              name="email"
+              className="form-control"
+              placeholder="Masukan alamat email"
+              onChange={(e) => handleChange(e)}
+            />
           </div>
 
-          <button onClick={(e) => handleSubmit(e)} type="button" className="auth-btn btn btn-primary">
+          <button
+            onClick={(e) => handleSubmit(e)}
+            type="button"
+            className="auth-btn btn btn-primary"
+          >
             Send password reset email
           </button>
         </form>
