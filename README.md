@@ -133,7 +133,7 @@
 - [js-cookie](https://www.npmjs.com/package/js-cookie)
 - [next](https://nextjs.org/)
 - [next-cookies](https://www.npmjs.com/package/next-cookies)
-- [react](https://img.shields.io/npm/v/react?label=react)](https://reactjs.org/)
+- [react](https://reactjs.org/)
 - [react-bootstrap](https://react-bootstrap.github.io/)
 - [react-chartjs-2](https://www.npmjs.com/package/react-chartjs-2)
 - [react-dom](https://reactjs.org/docs/react-dom.html)
